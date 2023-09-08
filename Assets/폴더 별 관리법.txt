@@ -1,0 +1,16 @@
+폴더 별 위치 리소스
+Animations : Animation Controller, Animation, Animation Override Controller
+Resources : Prefab, 사운드
+Scenes : Scene
+Scripts : 스크립트
+Textures : 이미지
+
+
+기본적으로는 큰 분류로 나눠 주시면 됩니다.
+character,
+weapon 
+같이요 만약 파일수가 너무 많아진다 싶으시다면,
+세부 분류를 만들어서 분류 해주시면 됩니다.
+Player/Monster와 같이요
+
+세부 분류는 해당 위치의 TXT 파일을 참조해주세요
