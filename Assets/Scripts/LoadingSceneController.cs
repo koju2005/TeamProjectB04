@@ -7,14 +7,16 @@ using Unity.VisualScripting;
 
 public class LoadingSceneController : MonoBehaviour
 {
-    static string nextScene;
 
+    static int nextSceneindex;
     [SerializeField]
     Image progressBar;
 
-    public static void LoadScene(string sceneName)
+
+
+    public static void LoadScene(int i)
     {
-        nextScene = sceneName;
+        nextSceneindex = i;
         SceneManager.LoadScene("LoadingScene");
     }
     // Start is called before the first frame update
@@ -25,7 +27,8 @@ public class LoadingSceneController : MonoBehaviour
 
     IEnumerator LoadSceneProcess()
     {
-        AsyncOperation op = SceneManager.LoadSceneAsync(nextScene);
+
+        AsyncOperation op = SceneManager.LoadSceneAsync(nextSceneindex);
         op.allowSceneActivation = false;
 
         float timer = 0f;
