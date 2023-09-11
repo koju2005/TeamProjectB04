@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc57453377409142b68e717b2fb23d0, type: 3}
   m_Name: IncreaseBalls
   m_EditorClassIdentifier: 
-  Image: {fileID: 0}
+  Image: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   itemFunctions:
   - {fileID: 11400000, guid: 4c392fa930e24e64b980e7ea5618dc83, type: 2}
   ItemEffectValue: 02000000

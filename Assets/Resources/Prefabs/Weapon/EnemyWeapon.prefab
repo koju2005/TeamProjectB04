@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
-  owner: 
+  owner: Monster
 --- !u!58 &1112100989190821404
 CircleCollider2D:
   m_ObjectHideFlags: 0

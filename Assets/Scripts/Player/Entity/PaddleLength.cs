@@ -25,7 +25,6 @@ public class PaddleLength : MonoBehaviour
 
     private void LengthChange()
     {
-        Debug.Log(_health.GetHealth() + " " + point);
         transform.localScale = new Vector2(point * _health.GetHealth(), transform.localScale.y);
     }
 

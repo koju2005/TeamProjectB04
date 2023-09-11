@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using DefaultNamespace;
 using DefaultNamespace.Common;
@@ -11,12 +12,22 @@ public class Shooter : MonoBehaviour
     public string[] AttackPrefabsName;
     public int[] AttackDelay;
 
+    private Transform playerTransform;
+    private Animator anim;
 
     private bool isFirst = true;
+
+    private void Awake()
+    {
+        anim = GetComponentInChildren<Animator>();
+    }
+
     private void Start()
     {
         StartRoutine();
         isFirst = false;
+        playerTransform = GameManager.Instance.GetPlayer().transform;
+       
     }
 
     private void OnEnable()
@@ -58,7 +69,14 @@ public class Shooter : MonoBehaviour
         GameObject player = GameManager.Instance.GetPlayer();
         AutoMover mover = weapon.GetComponent<AutoMover>();
         mover.accelate = (player.transform.position - weapon.transform.position).normalized * 5;
-            
+        
+        PlayShotAnim();
         weapon.SetActive(true);
-    }   
+    }
+
+    private void PlayShotAnim()
+    {
+        if(anim)
+            anim.SetTrigger("Attack");
+    }
 }
