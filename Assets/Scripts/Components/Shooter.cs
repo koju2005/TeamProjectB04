@@ -59,7 +59,6 @@ public class Shooter : MonoBehaviour
         AutoMover mover = weapon.GetComponent<AutoMover>();
         mover.accelate = (player.transform.position - weapon.transform.position).normalized * 5;
             
-        weapon.GetComponentInChildren<SpriteRenderer>().color = Color.yellow;
         weapon.SetActive(true);
     }   
 }
