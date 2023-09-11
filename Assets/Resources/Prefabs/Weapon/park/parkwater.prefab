@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accelate: {x: 2, y: -8}
-  speed: 255
+  speed: 0
 --- !u!114 &9054113367798753571
 MonoBehaviour:
   m_ObjectHideFlags: 0

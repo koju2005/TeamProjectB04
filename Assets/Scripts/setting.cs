@@ -23,9 +23,9 @@ public class setting : MonoBehaviour
         int maxSize = 5;// 배치될 사이즈 
         int currentStage = count;//스테이지에 따라 도는횟수가 다름
 
-        if (currentStage >= 3) { currentStage = 3;} 
+        if (currentStage > 5) { currentStage = 5;} 
 
-        int[] loop = { 2, 3, 4, 5};
+        int[] loop = { 0, 1, 2, 3, 4, 5};
         float between = 0.05f;
         //                  
         float monsterScale = (maxSize - (between * (loop[currentStage] - 1))) / loop[currentStage];
