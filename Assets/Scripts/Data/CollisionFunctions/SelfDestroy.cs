@@ -10,11 +10,13 @@ public class SelfDestroy : CollisionInteraction
     public override void EnterCollsion(GameObject Owner, GameObject target)
     {
         PooledObject pool = Owner.GetComponent<PooledObject>();
-        
-        if (pool.OnRelease!= null)
-            pool.OnRelease.Invoke(Owner);
-        else
-            Destroy(Owner);
+        if (target.activeSelf)
+        {
+            if (pool.OnRelease != null)
+                pool.OnRelease.Invoke(Owner);
+            else
+                Destroy(Owner);
+        }
     }
 
     public override void ExitCollsion(GameObject who, GameObject target)
