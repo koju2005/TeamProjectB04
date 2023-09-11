@@ -22,7 +22,7 @@ public class PlayerController : PaddleController
     void OnKeyboardMove(InputValue vlaue)
     {
         _direction = vlaue.Get<Vector2>().normalized;
-        Debug.Log("dddd");
+        //Debug.Log("dddd");
         CallKeyMoveEvent(_direction);
     }
 
