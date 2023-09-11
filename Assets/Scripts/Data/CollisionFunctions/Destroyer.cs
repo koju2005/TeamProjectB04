@@ -8,12 +8,14 @@ public class Destroyer : CollisionInteraction
 {
     public override void EnterCollsion(GameObject Owner,GameObject target)
     {
-
-        PooledObject pool = target.GetComponent<PooledObject>();
-        if (pool.OnRelease != null)
-            pool.OnRelease(target);
-        else
-            Destroy(target);
+        if (target.activeSelf)
+        {
+            PooledObject pool = target.GetComponent<PooledObject>();
+            if (pool.OnRelease != null)
+                pool.OnRelease(target);
+            else
+                Destroy(target);            
+        }
     }
 
     public override void ExitCollsion(GameObject who, GameObject target)
