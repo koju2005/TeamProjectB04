@@ -1659,6 +1659,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 6b29313c576f41c49a2cec14395a105f, type: 3}
+    - target: {fileID: 5825328424951488898, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6860353043871303993, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
       propertyPath: MaxHealth
       value: 20
