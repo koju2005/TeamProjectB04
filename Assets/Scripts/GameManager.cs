@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace DefaultNamespace
 {
@@ -14,7 +16,7 @@ namespace DefaultNamespace
         private static GameManager _instance;
         private GameObject _player;
         public static bool isApplicationExit = false;
-    
+        public int _stageIndex;
         public static GameManager Instance
         {
             get
@@ -88,6 +90,16 @@ namespace DefaultNamespace
         public HashSet<GameObject>.Enumerator GetWeapons()
         {
             return _currentWeapons.GetEnumerator();
+        }
+
+        public void SetSelectedStageIndex(int stageindex)
+        {
+            _stageIndex = stageindex;
+        }
+
+       public void LoadScene()
+        {
+            LoadingSceneController.LoadScene(_stageIndex);
         }
     }
 }
