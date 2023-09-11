@@ -5,7 +5,7 @@ using System;
 using DefaultNamespace;
 using DefaultNamespace.Data;
 using UnityEngine.Serialization;
-[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(PolygonCollider2D))]
 public class Health : MonoBehaviour
 {
     public int MaxHealth; 
