@@ -718,12 +718,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dropPosition: {fileID: 671930967}
-  dealy: 1
+  dealy: 20
   itemList: {fileID: 982633152}
-  item1: {fileID: 0}
-  item2: {fileID: 0}
-  item3: {fileID: 0}
-  item4: {fileID: 0}
 --- !u!4 &671930969
 Transform:
   m_ObjectHideFlags: 0
