@@ -1,3 +1,4 @@
+using DefaultNamespace;
 using JetBrains.Annotations;
 using System;
 using System.Collections;
@@ -9,11 +10,15 @@ public class setting : MonoBehaviour
     public GameObject MonsterList;
     public GameObject monster;
 
+
     // Start is called before the first frame update
     //
     //
     void Start()
     {
+        //monster = GameManager.Instance. 기본 몬스터값 가져오게 수정해야함
+        MonsterList = new GameObject();
+        MonsterList.name = "MonsterList";
         int maxSize = 5;// 배치될 사이즈 
         int currentStage = 3;//스테이지에 따라 도는횟수가 다름
 
