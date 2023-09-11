@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using DefaultNamespace;
 using DefaultNamespace.Common;
@@ -15,12 +16,18 @@ public class Shooter : MonoBehaviour
     private Animator anim;
 
     private bool isFirst = true;
+
+    private void Awake()
+    {
+        anim = GetComponentInChildren<Animator>();
+    }
+
     private void Start()
     {
         StartRoutine();
         isFirst = false;
         playerTransform = GameManager.Instance.GetPlayer().transform;
-        anim = GetComponentInChildren<Animator>();
+       
     }
 
     private void OnEnable()
@@ -69,6 +76,7 @@ public class Shooter : MonoBehaviour
 
     private void PlayShotAnim()
     {
-        anim.SetTrigger("Attack");
+        if(anim)
+            anim.SetTrigger("Attack");
     }
 }

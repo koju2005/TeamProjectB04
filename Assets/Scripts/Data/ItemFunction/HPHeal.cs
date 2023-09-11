@@ -7,7 +7,12 @@ namespace DefaultNamespace.Data.ItemFunction
     {
         public override void Apply(GameObject Player, int effectValue)
         { 
-            Player.GetComponent<Health>().AddHealth(effectValue);
+            Health health = Player.GetComponent<Health>();
+            if (health != null)
+            {
+                health.AddHealth(effectValue);
+            }
+               
         }
     }
 }

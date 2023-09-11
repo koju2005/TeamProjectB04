@@ -7,7 +7,7 @@ public class ItemManager : ObjectPoolManager<ItemData>
 {
     protected override void MakeObject(GameObject obj, ItemData data)
     {
-        SpriteRenderer spriteRenderer = obj.GetComponent<SpriteRenderer>();
+        SpriteRenderer spriteRenderer = obj.GetComponentInChildren<SpriteRenderer>();
         Effector effector = obj.GetComponent<Effector>();
 
         spriteRenderer.sprite = data.Image;
