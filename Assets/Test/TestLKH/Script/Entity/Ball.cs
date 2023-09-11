@@ -50,16 +50,4 @@ public class Ball : MonoBehaviour
         }
     }
 
-    public void SetPosition(float x, float y)
-    {
-        transform.position = new Vector2(x, y);
-    }
-
-    public void ForceBall(float x, float y)
-    {
-        force.x = x;
-        force.y = y;
-
-        Rb.AddForce(force.normalized * speed);
-    }
 }
