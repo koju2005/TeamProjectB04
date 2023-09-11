@@ -1226,6 +1226,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -882201987174540169, guid: f443090fadbe1bf4d8b452423ea54273, type: 3}
+      propertyPath: _health
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4428967635383861137, guid: f443090fadbe1bf4d8b452423ea54273, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1358,6 +1362,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1713451260034510493, guid: cfe9d455c50528c4fad754b5e89d0cc3, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1863134399141425775, guid: cfe9d455c50528c4fad754b5e89d0cc3, type: 3}
       propertyPath: m_Name
       value: Weapon
@@ -1443,6 +1451,10 @@ PrefabInstance:
       propertyPath: action.Array.data[3]
       value: 
       objectReference: {fileID: 11400000, guid: bc8e2bd8738c579498ab90765f9f89bd, type: 2}
+    - target: {fileID: 1351260394443981486, guid: 958839640f1fbda4f8024e44703db739, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2287035615694212124, guid: 958839640f1fbda4f8024e44703db739, type: 3}
       propertyPath: m_Name
       value: Item
