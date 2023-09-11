@@ -9,40 +9,44 @@ using DefaultNamespace.Common;
 public class ItemDropManager : MonoBehaviour
 {
     public GameObject _dropPosition;
-    public float dealy=10;
+    public float dealy=20;
 
     public ItemManager itemList;
 
-    public GameObject item1;
-    public GameObject item2;
-    public GameObject item3;
-    public GameObject item4;
     // Start is called before the first frame update
     void Start()
     {
         itemList = GameManager.Instance._ItemManager;
-        StartCoroutine(Drop(dealy));
+        Invoke("Wait",3f);
+        //StartCoroutine(Drop(dealy));
+
     }
     // Update is called once per frame
-
+    public void Wait()
+    {
+        Debug.Log("시작체크");
+        StartCoroutine(Drop(dealy));
+    }
     IEnumerator Drop(float dealy)
     {
         WaitForSeconds seconds = CoroutineTime.GetWaitForSeconds(dealy);
-        int itemnum = 2;
+        int itemCount = 2;
         while (true)
         {
             System.Random randomObj = new System.Random();
-            int itemType = randomObj.Next(1,itemnum);
-
+            int itemType = randomObj.Next(0,itemCount);
+            Debug.Log(itemType);
             Vector3 spawnPos = GetRandomPosition();//랜덤위치함수
             switch (itemType) 
             {
-                case 1:
+                case 0:
                     GameObject item1 = itemList.Get("IncreaseBalls");
+                    item1.transform.position = spawnPos;
                     item1.SetActive(true);
                     break;
-                case 2:
+                case 1:
                     GameObject item2 = item2 = itemList.Get("HealItem");
+                    item2.transform.position = spawnPos;
                     item2.SetActive(true);
                     break;
             }
