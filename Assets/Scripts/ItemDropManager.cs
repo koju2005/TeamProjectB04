@@ -17,16 +17,11 @@ public class ItemDropManager : MonoBehaviour
     void Start()
     {
         itemList = GameManager.Instance._ItemManager;
-        Invoke("Wait",3f);
+        Invoke("Wait1",3);
         //StartCoroutine(Drop(dealy));
 
     }
     // Update is called once per frame
-    public void Wait()
-    {
-        Debug.Log("����üũ");
-        StartCoroutine(Drop(dealy));
-    }
     IEnumerator Drop(float dealy)
     {
         WaitForSeconds seconds = CoroutineTime.GetWaitForSeconds(dealy);
@@ -35,17 +30,17 @@ public class ItemDropManager : MonoBehaviour
         {
             System.Random randomObj = new System.Random();
             int itemType = randomObj.Next(0,itemCount);
-            Debug.Log(itemType);
             Vector3 spawnPos = GetRandomPosition();//������ġ�Լ�
+
             switch (itemType) 
             {
                 case 0:
-                    GameObject item1 = itemList.Get("IncreaseBalls");
+                    GameObject item1 = itemList.Get("BallIncrease");
                     item1.transform.position = spawnPos;
                     item1.SetActive(true);
                     break;
                 case 1:
-                    GameObject item2 = item2 = itemList.Get("HealItem");
+                    GameObject item2 = itemList.Get("HPHeal");
                     item2.transform.position = spawnPos;
                     item2.SetActive(true);
                     break;
@@ -69,5 +64,11 @@ public class ItemDropManager : MonoBehaviour
         Vector3 spawnPos = new Vector3(posX, basePosition.y, basePosition.z);
 
         return spawnPos;
+    }
+
+    public void Wait1()
+    {
+        Debug.Log("����üũ");
+        StartCoroutine(Drop(dealy));
     }
 }
