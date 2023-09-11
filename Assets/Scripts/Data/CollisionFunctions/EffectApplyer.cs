@@ -8,7 +8,8 @@ namespace Data.Functions
     {
         public override void EnterCollsion(GameObject Owner, GameObject target)
         {
-            Owner.GetComponent<Effector>().ApplyEffect(target);
+            if(target.CompareTag("Player"))
+                Owner.GetComponent<Effector>().ApplyEffect(target);
         }
 
         public override void ExitCollsion(GameObject who, GameObject target)

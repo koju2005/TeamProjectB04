@@ -48,7 +48,6 @@ public class DongsAI : MonoBehaviour
                 yield return StartCoroutine(TypePrint(typeString));
                 printQueue.Dequeue();
             }
-            
             yield return new WaitUntil(() => printQueue.Count > 0);
         }
     }
