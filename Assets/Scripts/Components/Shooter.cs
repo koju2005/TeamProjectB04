@@ -11,12 +11,16 @@ public class Shooter : MonoBehaviour
     public string[] AttackPrefabsName;
     public int[] AttackDelay;
 
+    private Transform playerTransform;
+    private Animator anim;
 
     private bool isFirst = true;
     private void Start()
     {
         StartRoutine();
         isFirst = false;
+        playerTransform = GameManager.Instance.GetPlayer().transform;
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void OnEnable()
@@ -58,7 +62,13 @@ public class Shooter : MonoBehaviour
         GameObject player = GameManager.Instance.GetPlayer();
         AutoMover mover = weapon.GetComponent<AutoMover>();
         mover.accelate = (player.transform.position - weapon.transform.position).normalized * 5;
-            
+        
+        PlayShotAnim();
         weapon.SetActive(true);
-    }   
+    }
+
+    private void PlayShotAnim()
+    {
+        anim.SetTrigger("Attack");
+    }
 }

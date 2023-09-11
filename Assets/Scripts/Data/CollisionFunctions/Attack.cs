@@ -12,7 +12,7 @@ public class Attack : CollisionInteraction
         if (LayerMask.NameToLayer(weapon.owner) != target.layer)
         {
             Health health = target.GetComponent<Health>();
-            Animator animator = target.GetComponent<Animator>();
+            Animator animator = target.GetComponentInChildren<Animator>();
             if(animator)
                 animator.SetTrigger("Hit");
             int damage = weapon.Damage; 
