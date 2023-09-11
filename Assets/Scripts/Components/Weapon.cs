@@ -10,6 +10,7 @@ namespace DefaultNamespace.Data
     public class Weapon: MonoBehaviour
     {
         [SerializeField] private int _damage;
+        public string owner="Player";
         public int Damage
         {
             get { return _damage;}
@@ -18,7 +19,7 @@ namespace DefaultNamespace.Data
 
         public void OnEnable()
         {
-            if (gameObject.layer == LayerMask.NameToLayer("Projectile"))
+            if (gameObject.layer == LayerMask.NameToLayer("UserWeapon"))
             {
                 GameManager.Instance.AddWeapon(gameObject);                
             }
@@ -29,7 +30,7 @@ namespace DefaultNamespace.Data
         {
             try
             {
-                if (!GameManager.isApplicationExit || gameObject.layer == LayerMask.NameToLayer("Projectile"))
+                if (!GameManager.isApplicationExit || gameObject.layer == LayerMask.NameToLayer("UserWeapon"))
                 {
                     if (GameManager.Instance != null)
                         GameManager.Instance.RemoveWeapon(gameObject);                
