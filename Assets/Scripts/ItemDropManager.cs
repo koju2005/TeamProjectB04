@@ -35,12 +35,12 @@ public class ItemDropManager : MonoBehaviour
             switch (itemType) 
             {
                 case 0:
-                    GameObject item1 = itemList.Get("BallIncrease");
+                    GameObject item1 = itemList.Get("IncreaseBalls");
                     item1.transform.position = spawnPos;
                     item1.SetActive(true);
                     break;
                 case 1:
-                    GameObject item2 = itemList.Get("HPHeal");
+                    GameObject item2 = itemList.Get("HealItem");
                     item2.transform.position = spawnPos;
                     item2.SetActive(true);
                     break;
