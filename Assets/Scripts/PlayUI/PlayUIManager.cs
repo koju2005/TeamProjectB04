@@ -2,8 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OptionBtn : MonoBehaviour
+public class PlayUIManager : MonoBehaviour
 {
+    public static PlayUIManager PUI;
+    
+
+    private void Awake()
+    {
+        PUI = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
