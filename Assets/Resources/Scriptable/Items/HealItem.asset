@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc57453377409142b68e717b2fb23d0, type: 3}
   m_Name: HealItem
   m_EditorClassIdentifier: 
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 2149522a57a57e54f90cc29ea5d3c430, type: 3}
   itemFunctions:
   - {fileID: 11400000, guid: b656cc9feddc565418412ac4a82f8c76, type: 2}
   ItemEffectValue: 05000000

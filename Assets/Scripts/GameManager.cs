@@ -51,7 +51,7 @@ namespace DefaultNamespace
             }
             _instance = this;
             _prefabsPoolManager.Init(@"Prefabs");
-            _ItemManager.Init(@"Scriptable\Item");
+            _ItemManager.Init(@"Scriptable\Items");
             DontDestroyOnLoad(gameObject);
         }
         
