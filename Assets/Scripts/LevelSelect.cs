@@ -1,3 +1,4 @@
+using DefaultNamespace;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,17 @@ using UnityEngine;
 public class LevelSelect : MonoBehaviour
 {
 
+    public AudioClip Stage1;
+    public AudioClip Stage2;
+    public AudioClip Stage3;
+    public AudioClip Stage4;
+    public AudioClip Stage5;
+    AudioSource audioSource;
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        DontDestroyOnLoad(gameObject);
+    }
     void Update()
     {
         
@@ -24,16 +36,39 @@ public class LevelSelect : MonoBehaviour
                     flameTransform.gameObject.SetActive(false);
                     Renderer stoneRenderer = stoneTransform.GetComponent<Renderer>();
                     stoneRenderer.material.color = new Color(0,0,0,0.7f);
-                   //여기까지
-                   //게임매니저에서 IsWin 메서드 써서 따로빼도될듯
-                
-                    //GameManager.SetSelectedStageIndex(_stageindex);
+                    //여기까지
+                    //게임매니저에서 IsWin 메서드 써서 따로빼도될듯
+                    
+                    GameManager.Instance.SetSelectedStageIndex(_stageindex);
+                    SoundSelect();
+                    audioSource.Play();
+                    GameManager.Instance.LoadScene();
+                   
                 }
             }
-            else
-            {
-                Debug.Log("없음");
-            }
+        }
+    }
+
+    void SoundSelect()
+    {
+        int index = GameManager.Instance._stageIndex;
+        switch (index) 
+        {   
+            case 4:
+              audioSource.clip = Stage1;
+                break;
+            case 5:
+                audioSource.clip = Stage2;
+                break;
+            case 6:
+                audioSource.clip = Stage3;
+                break;
+            case 7:
+                audioSource.clip = Stage4;
+                break;
+            case 8:
+                audioSource.clip = Stage5;
+                break;
         }
     }
 }
