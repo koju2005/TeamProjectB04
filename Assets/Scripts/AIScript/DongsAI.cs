@@ -44,9 +44,12 @@ public class DongsAI : MonoBehaviour
         {
             while (printQueue.Count > 0)
             {
-                string typeString = printQueue.Dequeue();
+                string typeString = printQueue.Peek();
                 yield return StartCoroutine(TypePrint(typeString));
+                printQueue.Dequeue();
             }
+            
+            yield return new WaitUntil(() => printQueue.Count > 0);
         }
     }
 
@@ -77,7 +80,7 @@ public class DongsAI : MonoBehaviour
         yield return CoroutineTime.GetWaitForSecondsRealtime(1);
         printQueue.Enqueue("안녕하세요");
         printQueue.Enqueue("이..기실 수 있을까요?");
-        //yield return new WaitUntil(() => printQueue.Count == 0);
+        yield return new WaitUntil(() => printQueue.Count == 0);
         Time.timeScale = 1;
     }
 
