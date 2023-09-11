@@ -9,7 +9,7 @@ using DefaultNamespace.Common;
 public class ItemDropManager : MonoBehaviour
 {
     public GameObject _dropPosition;
-    public float dealy;
+    public float dealy=10;
 
     public ItemManager itemList;
 
