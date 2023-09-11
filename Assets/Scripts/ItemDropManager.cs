@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using Random = UnityEngine.Random;
 using DefaultNamespace;
+using DefaultNamespace.Common;
 
 public class ItemDropManager : MonoBehaviour
 {
@@ -19,46 +20,35 @@ public class ItemDropManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        List<GameObject> dropItemList = new List<GameObject>();
-
         itemList = GameManager.Instance._ItemManager;
-
-        item1 = itemList.Get("IncreaseBalls");
-        dropItemList.Add(item1);
-        item2 = itemList.Get("HealItem");
-        dropItemList.Add(item2);
-
-
-        //item3 = itemList.Get("name");
-        //itemList2.Add(item3);
-        //item4 = itemList.Get("name");
-        //itemList2.Add(item4);
-        StartCoroutine(Drop(dropItemList, dealy));
+        StartCoroutine(Drop(dealy));
     }
-    private void Update()
-    {
-       
-    }
-
     // Update is called once per frame
 
-    IEnumerator Drop(List<GameObject> itemList,float dealy)
+    IEnumerator Drop(float dealy)
     {
-        while(true)
+        WaitForSeconds seconds = CoroutineTime.GetWaitForSeconds(dealy);
+        int itemnum = 2;
+        while (true)
         {
             System.Random randomObj = new System.Random();
-            //int randomNum = randomObj.Next(100);
-            int itemType = randomObj.Next(itemList.Count);
+            int itemType = randomObj.Next(1,itemnum);
+
             Vector3 spawnPos = GetRandomPosition();//랜덤위치함수
-            GameObject dropItem = Instantiate(itemList[itemType], spawnPos, Quaternion.identity);
-            dropItem.AddComponent<Rigidbody2D>();
-
-            if (dropItem.transform.position.y < -5.5) //이부분이 문제인데 새로생긴 객체에 접근 하는법을 모르겠음 추후 수정예정
+            switch (itemType) 
             {
-                Destroy(dropItem);
+                case 1:
+                    GameObject item1 = itemList.Get("IncreaseBalls");
+                    item1.SetActive(true);
+                    break;
+                case 2:
+                    GameObject item2 = item2 = itemList.Get("HealItem");
+                    item2.SetActive(true);
+                    break;
             }
+            //yield return new WaitForSeconds(dealy);
 
-            yield return new WaitForSeconds(dealy);
+                yield return seconds;
         }
 
     }
