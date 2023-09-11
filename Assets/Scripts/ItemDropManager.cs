@@ -30,8 +30,8 @@ public class ItemDropManager : MonoBehaviour
         {
             System.Random randomObj = new System.Random();
             int itemType = randomObj.Next(0,itemCount);
-            Debug.Log($"{itemType}           @");
-            Vector3 spawnPos = GetRandomPosition();//·£´ýÀ§Ä¡ÇÔ¼ö
+            Vector3 spawnPos = GetRandomPosition();//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½Ô¼ï¿½
+
             switch (itemType) 
             {
                 case 0:
@@ -68,7 +68,7 @@ public class ItemDropManager : MonoBehaviour
 
     public void Wait1()
     {
-        Debug.Log("½ÃÀÛÃ¼Å©");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½Ã¼Å©");
         StartCoroutine(Drop(dealy));
     }
 }
