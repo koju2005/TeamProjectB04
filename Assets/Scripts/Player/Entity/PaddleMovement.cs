@@ -28,7 +28,6 @@ public class PaddleMovement : MonoBehaviour
     private void KeyMove(Vector2 direction)
     {
         _direction = direction;
-        Debug.Log("ют╥б");
     }
 
     private void DragMove(Vector2 mousePos)
