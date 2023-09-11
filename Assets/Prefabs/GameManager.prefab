@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2477811948824020081}
   - component: {fileID: 927375010643826705}
+  - component: {fileID: 3044729300273302967}
+  - component: {fileID: 8422707562217931559}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -30,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &927375010643826705
 MonoBehaviour:
@@ -42,5 +44,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 497b9e2a161c455ba5bc8aaa9182e5bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3044729300273302967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3041445810342550170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2bef2c76d9acf5459764736a2416c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basePrefabs: {fileID: 2287035615694212124, guid: 958839640f1fbda4f8024e44703db739, type: 3}
+  defaultCapacity: 10
+  maxPoolSize: 500
+--- !u!114 &8422707562217931559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3041445810342550170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2feaaa049a4a4feda924387808ba3ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

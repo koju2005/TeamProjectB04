@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerController : PaddleController
 {
@@ -21,7 +22,7 @@ public class PlayerController : PaddleController
     void OnKeyboardMove(InputValue vlaue)
     {
         _direction = vlaue.Get<Vector2>().normalized;
-        
+        Debug.Log("dddd");
         CallKeyMoveEvent(_direction);
     }
 
