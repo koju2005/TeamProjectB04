@@ -656,7 +656,8 @@ PrefabInstance:
       propertyPath: MaxHealth
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2211272823933603068, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -788,7 +789,8 @@ PrefabInstance:
       propertyPath: MaxHealth
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2211272823933603068, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1123,7 +1125,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.462
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2211272823933603068, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1509,7 +1512,8 @@ PrefabInstance:
       propertyPath: MaxHealth
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2211272823933603068, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1857,7 +1861,8 @@ PrefabInstance:
       propertyPath: MaxHealth
       value: 20
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2211272823933603068, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

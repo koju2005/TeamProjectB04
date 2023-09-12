@@ -35,8 +35,6 @@ public class Health : MonoBehaviour
         if (tag == "Monster") 
         {
             GameManager.Instance.monsterCount+=1;
-            Debug.Log(GameManager.Instance.monsterCount);
-            Debug.Log("¼ıÀÚ");
         }
     }
     public void AddHealth(int damage)
