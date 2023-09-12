@@ -20,6 +20,7 @@ public class PlayUIManager : MonoBehaviour
         }
     }
 
+    GameManager gameManager;
     GameObject Player;
 
     [SerializeField] private GameObject GamePlayUI;
@@ -32,9 +33,13 @@ public class PlayUIManager : MonoBehaviour
     private GameObject winUI;
     private GameObject optionUI;
 
+    int _stageIndex;
+
 
     private void Awake()
     {
+        _stageIndex = GameManager.Instance._stageIndex;
+        Debug.Log("스테이지 : " + _stageIndex.ToString());
         LoseUI.SetActive(false);
         WinUI.SetActive(false);
         OptionUI.SetActive(false);
@@ -44,41 +49,48 @@ public class PlayUIManager : MonoBehaviour
         winUI = GameObject.Instantiate(WinUI);
         optionUI = GameObject.Instantiate(OptionUI);
 
-        Player = GameManager.Instance.GetPlayer();
+        gameManager = GameManager.Instance;
+        Player = gameManager.GetPlayer();
         Player.GetComponent<Health>().OnDeath += Lose;
     }
 
     private void Lose(string tag)
     {
+        Time.timeScale = 0;
         loseUI.SetActive(true);
     }
 
     private void Win(string tag)
     {
-        if(tag == "boss")
+        if(gameManager.monsterCount <= 0)
         {
+            Time.timeScale = 0;
             winUI.SetActive(true);
         }
     }
 
     public void OpenOptionUI()
     {
+        Time.timeScale = 0;
         optionUI.SetActive(true);
     }
 
     public void CloseOptionUI()
     {
         optionUI.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void MoveSelectScene()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("SelcectScene");
     }
 
     public void RestartScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+        LoadingSceneController.LoadScene(_stageIndex);
     }
 
 }

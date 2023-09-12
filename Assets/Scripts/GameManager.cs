@@ -86,13 +86,8 @@ namespace DefaultNamespace
 
         public void CheckDeathCount(string whoisDeadTag)
         {
-            if (whoisDeadTag == "Player")
-            {
-                //아마 게임오버 창 뜨게 만들기
-                LoadSelecteScene();
-
-            }
-            else if (whoisDeadTag == "Monster")
+            
+            if (whoisDeadTag == "Monster")
             {
                 monsterCount-=1;
                 if (monsterCount <= 0) 
@@ -116,7 +111,6 @@ namespace DefaultNamespace
                     }
                     //Debug.Log("이게1번같은데?");
                     endKey = true;
-                    LoadSelecteScene();
 
                 }
             }
