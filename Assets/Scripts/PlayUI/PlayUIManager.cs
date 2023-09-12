@@ -61,6 +61,7 @@ public class PlayUIManager : MonoBehaviour
     public void Lose(string tag)
     {
         Time.timeScale = 0;
+        if(loseUI !=null)
         loseUI.SetActive(true);
     }
 
