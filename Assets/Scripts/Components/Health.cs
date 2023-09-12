@@ -18,11 +18,13 @@ public class Health : MonoBehaviour
     {
         OnDeath += GameManager.Instance.CheckDeathCount;
         pool = GetComponent<PooledObject>();
+        monsterCount();
     }
 
     private void Start()
     {
         _health = MaxHealth;
+        
     }
 
     private void OnEnable()
@@ -30,6 +32,15 @@ public class Health : MonoBehaviour
         _health = MaxHealth;
     }
 
+    public void monsterCount() 
+    {
+        if (tag == "Monster") 
+        {
+            GameManager.Instance.monsterCount+=1;
+            Debug.Log(GameManager.Instance.monsterCount);
+            Debug.Log("����");
+        }
+    }
     public void AddHealth(int damage)
     {
         _health += damage;
