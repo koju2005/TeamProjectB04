@@ -181,9 +181,9 @@ namespace DefaultNamespace
             LoadScene();
         }
 
-        public void Update()
-        {
-            Debug.Log("공 숫자 : " + ballCount);
-        }
+        // public void Update()
+        // {
+        //     Debug.Log("공 숫자 : " + ballCount);
+        // }
     }
 }

@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 15425273}
   - component: {fileID: 15425272}
-  - component: {fileID: 15425271}
   - component: {fileID: 15425270}
   m_Layer: 0
   m_Name: Stage
@@ -155,18 +154,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageindex: 7
---- !u!114 &15425271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15425269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72cd5eab4b228f40bc028077df4e754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &15425272
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1363,7 +1350,6 @@ GameObject:
   m_Component:
   - component: {fileID: 782235049}
   - component: {fileID: 782235048}
-  - component: {fileID: 782235047}
   - component: {fileID: 782235046}
   m_Layer: 0
   m_Name: Stage
@@ -1385,18 +1371,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageindex: 8
---- !u!114 &782235047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 782235045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72cd5eab4b228f40bc028077df4e754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &782235048
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1445,7 +1419,6 @@ GameObject:
   m_Component:
   - component: {fileID: 999477874}
   - component: {fileID: 999477873}
-  - component: {fileID: 999477872}
   - component: {fileID: 999477871}
   m_Layer: 0
   m_Name: Stage
@@ -1467,18 +1440,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageindex: 5
---- !u!114 &999477872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 999477870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72cd5eab4b228f40bc028077df4e754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &999477873
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1527,7 +1488,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1002390136}
   - component: {fileID: 1002390137}
-  - component: {fileID: 1002390138}
   - component: {fileID: 1002390139}
   m_Layer: 0
   m_Name: Stage
@@ -1574,18 +1534,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1002390138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002390135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72cd5eab4b228f40bc028077df4e754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1002390139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1677,7 +1625,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1073900813}
   - component: {fileID: 1073900812}
-  - component: {fileID: 1073900811}
   - component: {fileID: 1073900810}
   m_Layer: 0
   m_Name: Stage
@@ -1699,18 +1646,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageindex: 6
---- !u!114 &1073900811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1073900809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72cd5eab4b228f40bc028077df4e754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1073900812
 BoxCollider:
   m_ObjectHideFlags: 0

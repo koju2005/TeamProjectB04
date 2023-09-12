@@ -40,7 +40,7 @@ public class PlayUIManager : MonoBehaviour
     private void Awake()
     {
         _stageIndex = GameManager.Instance._stageIndex;
-        Debug.Log("½ºÅ×ÀÌÁö : " + _stageIndex.ToString());
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " + _stageIndex.ToString());
         LoseUI.SetActive(false);
         WinUI.SetActive(false);
         OptionUI.SetActive(false);
@@ -61,14 +61,16 @@ public class PlayUIManager : MonoBehaviour
     public void Lose(string tag)
     {
         Time.timeScale = 0;
-        loseUI.SetActive(true);
+        if (loseUI)
+        {
+            loseUI.SetActive(true);
+        }
     }
 
     public void Win()
     {
         Time.timeScale = 0;
         winUI.SetActive(true);
-
     }
 
     public void OpenOptionUI()
@@ -85,10 +87,10 @@ public class PlayUIManager : MonoBehaviour
 
     public void MoveSelectScene()
     {
+        Time.timeScale = 1;
         optionUI.SetActive(false);
         winUI.SetActive(false);
         loseUI.SetActive(false);
-        Time.timeScale = 1;
         gameManager.LoadSelecteScene();
     }
 
@@ -100,4 +102,10 @@ public class PlayUIManager : MonoBehaviour
         LoadingSceneController.LoadScene(_stageIndex);
     }
 
+    private void OnDisable()
+    {
+        Player.GetComponent<Health>().OnDeath -= Lose;
+        gameManager.win -= Win;
+        gameManager.lose -= Lose;
+    }
 }
