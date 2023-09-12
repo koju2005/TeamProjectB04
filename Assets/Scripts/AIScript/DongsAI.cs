@@ -3,6 +3,7 @@ using DefaultNamespace;
 using DefaultNamespace.Common;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
@@ -11,7 +12,9 @@ public class DongsAI : MonoBehaviour
     [SerializeField]private Vector2 spawnRange;
     [SerializeField] private int moveSpeed=1;
     [SerializeField] private float phase4RespawnTime = 10f;
-    [SerializeField]private DialogTyper _dialogTyper;
+    [SerializeField] private DialogTyper _dialogTyper;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip[] phaseMusic;
     private Health _health;
     private PrefabsPoolManager _prefabsManager;
     private SpriteRenderer _SpriteRenderer;
@@ -29,6 +32,7 @@ public class DongsAI : MonoBehaviour
         _health = GetComponent<Health>();
         _health.OnHealthChanged += Interrupt;
         _SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        _audioSource = transform.AddComponent<AudioSource>();
     }
 
     private void Start()
@@ -126,6 +130,7 @@ public class DongsAI : MonoBehaviour
     private IEnumerator phase1()
     {
         phaseLevel = 1;
+        ChangeSong();
         Time.timeScale = 0;
         yield return CoroutineTime.GetWaitForSecondsRealtime(1);
         _dialogTyper.Enqueue("여기까지 \n잘 오셨습니다.");
@@ -145,9 +150,10 @@ public class DongsAI : MonoBehaviour
     private IEnumerator phase2()
     {
         phaseLevel = 2;
-        
+  
         _dialogTyper.WriteNow("으윽!");
         yield return CoroutineTime.GetWaitForSecondsRealtime(1.5f);
+        ChangeSong();
 
         Time.timeScale = 0;
         _dialogTyper.Enqueue("약하시진 않군요");
@@ -168,9 +174,11 @@ public class DongsAI : MonoBehaviour
     private IEnumerator phase3()
     {
         phaseLevel = 3;
-        
+    
         _dialogTyper.WriteNow("아아아아앜!");
         yield return CoroutineTime.GetWaitForSecondsRealtime(1.5f);
+        
+        ChangeSong();
         Time.timeScale = 0;
         _dialogTyper.Enqueue("안돼!!");
         _dialogTyper.Enqueue("야근은 싫단 말이야!!!");
@@ -194,6 +202,8 @@ public class DongsAI : MonoBehaviour
         yield return CoroutineTime.GetWaitForSecondsRealtime(1.5f);
         _dialogTyper.WriteNow("아아아아아앜!!");
         yield return CoroutineTime.GetWaitForSecondsRealtime(1.5f);
+        ChangeSong();
+        
         Time.timeScale = 0;
         _dialogTyper.Enqueue("이럴 수는 없다구!!!!!!!");
         _dialogTyper.Enqueue("어떻게 도망쳤는데!!!!!!");
@@ -214,7 +224,8 @@ public class DongsAI : MonoBehaviour
         yield return CoroutineTime.GetWaitForSecondsRealtime(1.5f);
         _dialogTyper.WriteNow("아아아아아아앜!!");
         yield return CoroutineTime.GetWaitForSecondsRealtime(1.5f);
-
+        ChangeSong();
+        
         NShooter shooter = transform.AddComponent<NShooter>();
         shooter.AttackPrefabsName = new[] { "Dongs1Weapon","Dongs2Weapon" };
         shooter.AttackDelay = new[] { 5.0f };
@@ -262,7 +273,11 @@ public class DongsAI : MonoBehaviour
             }
             yield return CoroutineTime.GetWaitForSeconds(phase4RespawnTime);
         }
-        
     }
 
+    private void ChangeSong()
+    {
+        _audioSource.clip = phaseMusic[phaseLevel];
+        _audioSource.Play();
+    }
 }

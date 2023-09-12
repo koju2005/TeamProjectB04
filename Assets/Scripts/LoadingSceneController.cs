@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -12,11 +13,10 @@ public class LoadingSceneController : MonoBehaviour
     [SerializeField]
     Image progressBar;
 
-
-
     public static void LoadScene(int i)
     {
         nextSceneindex = i;
+        GameManager.Instance._prefabsPoolManager.Clear();
         SceneManager.LoadScene("LoadingScene");
     }
     // Start is called before the first frame update

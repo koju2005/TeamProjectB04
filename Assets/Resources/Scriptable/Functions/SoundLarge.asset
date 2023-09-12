@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb95a284c0685a4380a55b0769aa810, type: 3}
   m_Name: SoundLarge
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 754a891b315844a4a9641577bd01768b, type: 3}
+  clip: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
+  sound: 0.2

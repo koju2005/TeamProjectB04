@@ -85,6 +85,15 @@ namespace DefaultNamespace
 
             return newWeapon;
         }
+
+        public void Clear()
+        {
+            foreach (var pool in _pool.Values)
+            {
+                pool.Clear();
+            }
+            _pool.Clear();
+        }
     }
         
 }
