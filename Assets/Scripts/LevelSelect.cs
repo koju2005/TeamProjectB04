@@ -30,6 +30,7 @@ public class LevelSelect : MonoBehaviour
                 if(hit.collider.tag == "Stage")
                 {
                     int _stageindex = hit.collider.GetComponent<StageIndex>().stageindex;
+                    GameManager.Instance.endKey = false;
                     //여기서 만약 스테이 클리어하면 아래 구문쓰면됨
                     Transform stoneTransform = hit.collider.transform.Find("Stone");
                     Transform flameTransform = hit.collider.transform.Find("Flame");
