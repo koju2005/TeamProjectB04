@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,13 +11,22 @@ namespace DefaultNamespace
     {
         public ItemManager _ItemManager { get; private set; }
         public PrefabsPoolManager _prefabsPoolManager { get; private set; }
-        
+
         public HashSet<GameObject> _currentWeapons { get; private set; }
-        
+
         private static GameManager _instance;
         private GameObject _player;
         public static bool isApplicationExit = false;
         public int _stageIndex;
+
+        public int monsterCount=0;
+        private bool stageClear1;
+        private bool stageClear2;
+        private bool stageClear3;
+        private bool stageClear4;
+        private bool stageClear5;
+
+
         public static GameManager Instance
         {
             get
@@ -28,7 +38,7 @@ namespace DefaultNamespace
                     {
                         GameObject obj = new GameObject("GameManager");
                         _instance = obj.AddComponent<GameManager>();
-                    }                        
+                    }
                 }
                 return _instance;
             }
@@ -56,7 +66,7 @@ namespace DefaultNamespace
             _ItemManager.Init(@"Scriptable\Items");
             DontDestroyOnLoad(gameObject);
         }
-        
+
         public GameObject GetPlayer()
         {
             if (!_player)
@@ -74,7 +84,43 @@ namespace DefaultNamespace
 
         public void CheckDeathCount(string whoisDeadTag)
         {
-            
+            Debug.Log(whoisDeadTag);
+            if (whoisDeadTag == "Player")
+            {
+                //if(플레이어목숨수 <0)
+                //{
+                Debug.Log("실패");
+                _stageIndex = 0;
+                LoadScene();
+                //}
+
+            }
+            else if (whoisDeadTag == "Monster")
+            {
+                Debug.Log(monsterCount);
+                monsterCount-=1;
+                Debug.Log(monsterCount);
+                if (monsterCount <= 0) 
+                {
+                    Debug.Log("클리어");
+                    switch(_stageIndex)
+                    {
+                        case 1:
+                            stageClear1 = true; break;
+                        case 2:
+                            stageClear2 = true; break;
+                        case 3:
+                            stageClear3 = true; break;
+                        case 4:
+                            stageClear4 = true; break;
+                        case 5:
+                            stageClear5 = true; break;
+                    }
+                    _stageIndex=0;
+                    LoadScene();
+
+                }
+            }
         }
 
         public void AddWeapon(GameObject weapon)
@@ -97,7 +143,7 @@ namespace DefaultNamespace
             _stageIndex = stageindex;
         }
 
-       public void LoadScene()
+        public void LoadScene()
         {
             LoadingSceneController.LoadScene(_stageIndex);
         }
