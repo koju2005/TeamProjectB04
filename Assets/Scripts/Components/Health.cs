@@ -28,10 +28,6 @@ public class Health : MonoBehaviour
     private void OnEnable()
     {
         monsterCount();
-    }
-
-    private void OnEnable()
-    {
         _health = MaxHealth;
     }
 
