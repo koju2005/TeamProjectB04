@@ -32,7 +32,6 @@ public class DongsAI : MonoBehaviour
         _health = GetComponent<Health>();
         _health.OnHealthChanged += Interrupt;
         _SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        _audioSource = transform.AddComponent<AudioSource>();
     }
 
     private void Start()
@@ -100,11 +99,16 @@ public class DongsAI : MonoBehaviour
 
     private IEnumerator Ending()
     {
+        phaseLevel = 6;
+        ChangeSong();
         Time.timeScale = 0;
         _dialogTyper.Enqueue("아..아...");
         _dialogTyper.Enqueue("아..아...");
+        _dialogTyper.Enqueue(".. 나의 .. 꿈은...");
+        _dialogTyper.Enqueue("나의 휴가는.....");
+        _dialogTyper.Enqueue("나의 휴일은.....");
         yield return new WaitUntil(() => !_dialogTyper.isSbWrite);
-        
+
         for (int i = 0; i < spawnPos.Length; ++i)
         {
             if (isMonsterDie[i])
@@ -122,7 +126,7 @@ public class DongsAI : MonoBehaviour
             _SpriteRenderer.color = new Color(0, 0, 0, alpha);
             yield return null;
         }
-
+        yield return CoroutineTime.GetWaitForSecondsRealtime(7f);
         Time.timeScale = 1;
         _health.AddHealth(-100);
     }
@@ -134,8 +138,8 @@ public class DongsAI : MonoBehaviour
         Time.timeScale = 0;
         yield return CoroutineTime.GetWaitForSecondsRealtime(1);
         _dialogTyper.Enqueue("여기까지 \n잘 오셨습니다.");
-        _dialogTyper.Enqueue("저는 돌아가기 싫어요");
-        _dialogTyper.Enqueue("야근은 싫단 말이예요");
+        _dialogTyper.Enqueue("저는 돌아가기 싫습니다");
+        _dialogTyper.Enqueue("야근은 싫단 말입니다");
         _dialogTyper.Enqueue("");
         _dialogTyper.Enqueue("그러니");
         _dialogTyper.Enqueue("어서 나가주시죠");
@@ -182,6 +186,7 @@ public class DongsAI : MonoBehaviour
         Time.timeScale = 0;
         _dialogTyper.Enqueue("안돼!!");
         _dialogTyper.Enqueue("야근은 싫단 말이야!!!");
+        _dialogTyper.Enqueue("저리가!!! \n이 못된 자식아");
         yield return new WaitUntil(() => !_dialogTyper.isSbWrite);
         Time.timeScale = 1;
 
@@ -205,9 +210,10 @@ public class DongsAI : MonoBehaviour
         ChangeSong();
         
         Time.timeScale = 0;
-        _dialogTyper.Enqueue("이럴 수는 없다구!!!!!!!");
+        _dialogTyper.Enqueue("안돼!!!!!!");
         _dialogTyper.Enqueue("어떻게 도망쳤는데!!!!!!");
         _dialogTyper.Enqueue("");
+        _dialogTyper.Enqueue("절대 붙잡혀 줄 수 없어!!!");
         yield return new WaitUntil(() => !_dialogTyper.isSbWrite);
         Time.timeScale = 1;
         StartCoroutine(RespawnMonster());
@@ -277,6 +283,7 @@ public class DongsAI : MonoBehaviour
 
     private void ChangeSong()
     {
+        _audioSource.Stop();
         _audioSource.clip = phaseMusic[phaseLevel];
         _audioSource.Play();
     }
