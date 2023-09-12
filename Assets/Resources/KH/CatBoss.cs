@@ -1,4 +1,5 @@
 using DefaultNamespace;
+using DefaultNamespace.Common;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
@@ -6,6 +7,7 @@ using UnityEngine;
 
 public class CatBoss : Shooter
 {
+    [SerializeField] private DialogTyper _dialogTyper;
     public float MoveSpeed;
     private Health PatternHealth;
     private void Start()
@@ -27,6 +29,8 @@ public class CatBoss : Shooter
             if (transform.position.x > 2.5 || transform.position.x < -2.5)
             {
                 MoveSpeed = -MoveSpeed;
+                if (PatternHealth.GetHealth() == 4)
+                { _dialogTyper.Enqueue("야아아아아아옹"); }
             }
             transform.position += new Vector3(MoveSpeed, 0, 0);
         }
