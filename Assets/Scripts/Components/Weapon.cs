@@ -21,8 +21,13 @@ namespace DefaultNamespace.Data
         {
             if (gameObject.layer == LayerMask.NameToLayer("UserWeapon"))
             {
-                GameManager.Instance.AddWeapon(gameObject);                
+                GameManager.Instance.AddWeapon(gameObject);
+
+                //GameManager.Instance.ballCount += 1;
+
+                Debug.Log(GameManager.Instance.ballCount);
             }
+            
             
         }
 
@@ -32,8 +37,15 @@ namespace DefaultNamespace.Data
             {
                 if (!GameManager.isApplicationExit || gameObject.layer == LayerMask.NameToLayer("UserWeapon"))
                 {
-                    if (GameManager.Instance != null)
-                        GameManager.Instance.RemoveWeapon(gameObject);                
+                    if (GameManager.Instance != null) 
+                    {
+                        GameManager.Instance.RemoveWeapon(gameObject);
+                        if (owner == "player")
+                        {
+                            GameManager.Instance.ballCount -= 1;
+                        }
+                    }
+           
                     else
                         Destroy(gameObject);                
                 }
