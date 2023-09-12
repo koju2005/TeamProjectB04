@@ -61,19 +61,19 @@ public class LevelSelect : MonoBehaviour
         int index = GameManager.Instance._stageIndex;
         switch (index) 
         {   
-            case 0:
+            case 2:
               audioSource.clip = Stage1;
                 break;
-            case 1:
+            case 3:
                 audioSource.clip = Stage2;
                 break;
-            case 2:
+            case 4:
                 audioSource.clip = Stage3;
                 break;
-            case 3:
+            case 5:
                 audioSource.clip = Stage4;
                 break;
-            case 4:
+            case 6:
                 audioSource.clip = Stage5;
                 break;
         }

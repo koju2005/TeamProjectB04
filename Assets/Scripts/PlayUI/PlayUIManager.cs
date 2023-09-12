@@ -60,9 +60,11 @@ public class PlayUIManager : MonoBehaviour
 
     public void Lose(string tag)
     {
-        Time.timeScale = 0;
         if (loseUI)
+        {
+            Time.timeScale = 0;
             loseUI.SetActive(true);
+        }
     }
 
     public void Win()
@@ -102,7 +104,8 @@ public class PlayUIManager : MonoBehaviour
 
     private void OnDisable()
     {
-        Player.GetComponent<Health>().OnDeath -= Lose;
+        if(Player)
+            Player.GetComponent<Health>().OnDeath -= Lose;
         gameManager.win -= Win;
         gameManager.lose -= Lose;
     }

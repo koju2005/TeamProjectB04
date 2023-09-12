@@ -161,7 +161,7 @@ namespace DefaultNamespace
         public void LoadSelecteScene()
         {
             Time.timeScale = 1f;
-            _stageIndex = 8;
+            _stageIndex = 7;
             LoadScene();
         }
     }
