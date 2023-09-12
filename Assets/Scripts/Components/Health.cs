@@ -25,6 +25,11 @@ public class Health : MonoBehaviour
         _health = MaxHealth;
     }
 
+    private void OnEnable()
+    {
+        _health = MaxHealth;
+    }
+
     public void AddHealth(int damage)
     {
         _health += damage;
