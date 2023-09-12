@@ -13,7 +13,7 @@ public class Attack : CollisionInteraction
         {
             Health health = target.GetComponent<Health>();
             Animator animator = target.GetComponentInChildren<Animator>();
-            if(animator)
+            if(animator && animator.runtimeAnimatorController)
                 animator.SetTrigger("Hit");
             int damage = weapon.Damage; 
             if (health != null)

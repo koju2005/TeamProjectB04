@@ -76,7 +76,7 @@ public class Shooter : MonoBehaviour
 
     private void PlayShotAnim()
     {
-        if(anim)
+        if(anim && anim.runtimeAnimatorController)
             anim.SetTrigger("Attack");
     }
 }
