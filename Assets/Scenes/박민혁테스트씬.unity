@@ -235,7 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MonsterList: {fileID: 0}
   monster: {fileID: 1095270360194539378, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
-  count: 2
+  count: 3
 --- !u!1 &236325352 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1095270360194539378, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}

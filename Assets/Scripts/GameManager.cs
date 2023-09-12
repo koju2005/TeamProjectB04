@@ -20,11 +20,11 @@ namespace DefaultNamespace
         public int _stageIndex;
 
         public int monsterCount=0;
-        private bool stageClear1;
-        private bool stageClear2;
-        private bool stageClear3;
-        private bool stageClear4;
-        private bool stageClear5;
+        private bool stageClear4 = false;
+        private bool stageClear5 = false;
+        private bool stageClear6 = false;
+        private bool stageClear7 = false;
+        private bool stageClear8 = false;
 
 
         public static GameManager Instance
@@ -90,7 +90,7 @@ namespace DefaultNamespace
                 //if(플레이어목숨수 <0)
                 //{
                 Debug.Log("실패");
-                _stageIndex = 0;
+                _stageIndex = 3;
                 LoadScene();
                 //}
 
@@ -105,18 +105,21 @@ namespace DefaultNamespace
                     Debug.Log("클리어");
                     switch(_stageIndex)
                     {
-                        case 1:
-                            stageClear1 = true; break;
-                        case 2:
-                            stageClear2 = true; break;
-                        case 3:
-                            stageClear3 = true; break;
                         case 4:
                             stageClear4 = true; break;
                         case 5:
                             stageClear5 = true; break;
+                        case 6:
+                            stageClear6 = true; break;
+                        case 7:
+                            stageClear7 = true; break;
+                        case 8:
+                            stageClear8 = true; break;
+                        default:
+                            Debug.Log("스테이지 넘버 오류");
+                            break;
                     }
-                    _stageIndex=0;
+                    _stageIndex=3;
                     LoadScene();
 
                 }
