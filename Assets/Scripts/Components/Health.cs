@@ -27,13 +27,18 @@ public class Health : MonoBehaviour
         
     }
 
+    private void OnEnable()
+    {
+        _health = MaxHealth;
+    }
+
     public void monsterCount() 
     {
         if (tag == "Monster") 
         {
             GameManager.Instance.monsterCount+=1;
             Debug.Log(GameManager.Instance.monsterCount);
-            Debug.Log("¼ýÀÚ");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½");
         }
     }
     public void AddHealth(int damage)
@@ -75,8 +80,9 @@ public class Health : MonoBehaviour
         return MaxHealth;
     }
 
-    public void Test(Func<GameObject,IEnumerator> a,GameObject test)
+    public void HitRecoveryColor(Func<GameObject,IEnumerator> recoveryFunction,GameObject hitRecoveryTarget)
     {
-        StartCoroutine(a.Invoke(test));
+        if(hitRecoveryTarget.activeSelf)
+            StartCoroutine(recoveryFunction.Invoke(hitRecoveryTarget));
     }
 }

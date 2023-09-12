@@ -15,7 +15,7 @@ public class DialogTyper : MonoBehaviour
     private StringBuilder sb;
     private TMP_Text Dialog;
 
-    public bool sbWrite { get; private set; } = false;
+    public bool isSbWrite { get; private set; } = false;
 
     private void Awake()
     {
@@ -32,7 +32,7 @@ public class DialogTyper : MonoBehaviour
     public void Enqueue(string typeString)
     {
         printQueue.Enqueue(typeString);
-        sbWrite = true;
+        isSbWrite = true;
     }
 
     public void WriteNow(string nowString)
@@ -56,7 +56,7 @@ public class DialogTyper : MonoBehaviour
     
     private IEnumerator TypePrint(string typeString)
     {
-        sbWrite = true;
+        isSbWrite = true;
         foreach (var c in typeString)
         {
             sb.Append(c);
@@ -66,12 +66,13 @@ public class DialogTyper : MonoBehaviour
         sb.Clear();
         yield return CoroutineTime.GetWaitForSecondsRealtime(typeEndWaitTime);
         Dialog.text = "";
-        sbWrite = false;
+        isSbWrite = false;
     }
     
     private IEnumerator WriteNowCoroutine(string typeString)
     {
         Dialog.text = typeString;
         yield return CoroutineTime.GetWaitForSecondsRealtime(typeEndWaitTime);
+        Dialog.text = "";
     }
 }
