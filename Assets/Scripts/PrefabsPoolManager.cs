@@ -28,7 +28,7 @@ namespace DefaultNamespace
 
         public GameObject Get(string name)
         {
-            GameObject newWeapon = null;
+            GameObject newObject = null;
             List<GameObject> pool;
             if (!_pool.TryGetValue(name, out pool))
             {
@@ -36,16 +36,16 @@ namespace DefaultNamespace
                 _pool.Add(name,pool);
             }
             
-            newWeapon = FindObject(pool);
-            if (newWeapon == null)
+            newObject = FindObject(pool);
+            if (newObject == null)
             {
-                newWeapon = CreateGameObject(name);
-                pool.Add(newWeapon);
+                newObject = CreateGameObject(name);
+                pool.Add(newObject);
             }
 
-            newWeapon.GetComponent<PooledObject>().OnRelease += OnRelease;
+            newObject.GetComponent<PooledObject>().OnRelease += OnRelease;
             
-            return newWeapon;
+            return newObject;
         }
         private void OnRelease(GameObject poolGo)
         {
