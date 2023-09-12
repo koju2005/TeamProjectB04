@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6936068568538067511}
   - component: {fileID: 4372493086036325780}
+  - component: {fileID: 3326406825894338840}
   m_Layer: 7
   m_Name: MainSprite
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300298, guid: c2957f4d831870a48af4ec016652548d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,6 +85,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3326406825894338840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991235060560667678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ac75ab091716a4f972394b91747a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultAngle: 0
+  AngleSpeed: 0
 --- !u!1 &1863134399141425775
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accelate: {x: 2, y: -5}
+  speed: 0
 --- !u!114 &2836571387554636589
 MonoBehaviour:
   m_ObjectHideFlags: 0

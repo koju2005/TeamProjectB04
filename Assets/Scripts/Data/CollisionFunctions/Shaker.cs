@@ -11,12 +11,12 @@ public class Shaker : CollisionInteraction
 {
     public override void EnterCollsion(GameObject Owner, GameObject target)
     {
-        Health test = target.GetComponent<Health>();
-        if (test)
+        Health health = target.GetComponent<Health>();
+        if (health)
         {
             SpriteRenderer renderer = target.GetComponentInChildren<SpriteRenderer>();
             renderer.color = Color.red;
-            test.Test(ColorReturn,target);            
+            health.HitRecoveryColor(ColorReturn,target);            
         }
     }
 

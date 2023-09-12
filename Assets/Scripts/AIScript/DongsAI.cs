@@ -71,9 +71,13 @@ public class DongsAI : MonoBehaviour
         if (_health.GetHealthRate() <= 0.1f && currentCoroutineString != "phase4")
         {
             StopCoroutine(currentPhase);
+            currentPhase = StartCoroutine(phase5());
+        }else if (_health.GetHealthRate() <= 0.3f && currentCoroutineString != "phase4")
+        {
+            StopCoroutine(currentPhase);
             currentPhase = StartCoroutine(phase4());
         }
-        else if( _health.GetHealthRate() <= 0.3f && currentCoroutineString != "phase3")
+        else if( _health.GetHealthRate() <= 0.5f && currentCoroutineString != "phase3")
         {
             StopCoroutine(currentPhase);
             currentPhase = StartCoroutine(phase3());
@@ -85,6 +89,8 @@ public class DongsAI : MonoBehaviour
         
         
     }
+
+    
 
     private IEnumerator phase1()
     {
@@ -132,6 +138,11 @@ public class DongsAI : MonoBehaviour
     {
         currentCoroutineString = "phase4";
         yield return null;
+    }
+    
+    private IEnumerator phase5()
+    {
+        throw new System.NotImplementedException();
     }
   
     private void SpawnMonster(string name,MonsterSpawnPos positionIndex)
