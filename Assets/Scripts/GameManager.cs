@@ -183,7 +183,7 @@ namespace DefaultNamespace
 
         public void Update()
         {
-            Debug.Log("공 숫자 : " + ballCount);
+            Debug.Log("몬스터 숫자 : " + monsterCount);
         }
     }
 }
