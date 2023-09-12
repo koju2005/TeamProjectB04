@@ -365,14 +365,15 @@ MonoBehaviour:
   moveSpeed: 1
   phase4RespawnTime: 10
   _dialogTyper: {fileID: 2017608771}
-  _audioSource: {fileID: 0}
+  _audioSource: {fileID: 1960005058}
   phaseMusic:
   - {fileID: 0}
   - {fileID: 8300000, guid: 6880e74c5281e428cace07ef42b5a6d9, type: 3}
   - {fileID: 8300000, guid: 915b6ca32befa42ca842297348a96cb8, type: 3}
   - {fileID: 8300000, guid: 0e50856cb275b4eb6ac3d4ef8b72e440, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 1848e5c0f65bc1542a32b7b6c41f30a4, type: 3}
+  - {fileID: 8300000, guid: 10546d9649879d14e8277d84c34d122e, type: 3}
+  - {fileID: 8300000, guid: c24fff81e3e63c3499716b64cdaf6032, type: 3}
 --- !u!1001 &166174598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1687,9 +1688,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
