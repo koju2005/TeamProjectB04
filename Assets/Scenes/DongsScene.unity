@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 117587505}
   m_Layer: 8
   m_Name: Dongs
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,8 +154,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1574410987}
   - {fileID: 459923110}
+  - {fileID: 1574410987}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
-  _health: 0
+  _health: 2
 --- !u!60 &117587504
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -362,6 +362,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRange: {x: 1.5, y: 1.5}
+  moveSpeed: 1
+  phase4RespawnTime: 10
   _dialogTyper: {fileID: 2017608771}
 --- !u!1001 &166174598
 PrefabInstance:

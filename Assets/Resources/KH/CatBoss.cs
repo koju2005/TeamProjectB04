@@ -12,7 +12,7 @@ public class CatBoss : Shooter
     {
         PatternHealth = GetComponent<Health>();
         PatternHealth.OnHealthChanged += BossPattern;
-        StartRoutine();
+        StartShootOperation();
     }
     private void Update()
     {

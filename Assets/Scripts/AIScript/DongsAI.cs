@@ -1,10 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
-using System.Text;
 using DefaultNamespace;
 using DefaultNamespace.Common;
-using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
@@ -17,6 +14,7 @@ public class DongsAI : MonoBehaviour
     [SerializeField]private DialogTyper _dialogTyper;
     private Health _health;
     private PrefabsPoolManager _prefabsManager;
+    private SpriteRenderer _SpriteRenderer;
     
     
     private bool NextOperation;
@@ -30,6 +28,7 @@ public class DongsAI : MonoBehaviour
     {
         _health = GetComponent<Health>();
         _health.OnHealthChanged += Interrupt;
+        _SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Start()
@@ -70,7 +69,11 @@ public class DongsAI : MonoBehaviour
 
     private void Interrupt()
     {
-        if (_health.GetHealthRate() <= 0.1f && phaseLevel <= 4)
+        if (_health.GetHealth() == 1)
+        {
+            StopAllCoroutines();
+            currentPhase = StartCoroutine(Ending());
+        }else if (_health.GetHealthRate() <= 0.1f && phaseLevel <= 4)
         {
             StopCoroutine(currentPhase);
             currentPhase = StartCoroutine(phase5());
@@ -89,8 +92,36 @@ public class DongsAI : MonoBehaviour
             currentPhase = StartCoroutine(phase2());
         }
     }
-
     
+
+    private IEnumerator Ending()
+    {
+        Time.timeScale = 0;
+        _dialogTyper.Enqueue("아..아...");
+        _dialogTyper.Enqueue("아..아...");
+        yield return new WaitUntil(() => !_dialogTyper.isSbWrite);
+        
+        for (int i = 0; i < spawnPos.Length; ++i)
+        {
+            if (isMonsterDie[i])
+            {
+                Health monHealth = isMonsterDie[i].GetComponent<Health>();
+                monHealth.AddHealth(-100);
+            }
+                           
+        }
+
+        int alpha = 255;
+        while (alpha > 0)
+        {
+            alpha -= (int)(255 * Time.unscaledDeltaTime);
+            _SpriteRenderer.color = new Color(0, 0, 0, alpha);
+            yield return null;
+        }
+
+        Time.timeScale = 1;
+        _health.AddHealth(-100);
+    }
 
     private IEnumerator phase1()
     {
@@ -107,7 +138,7 @@ public class DongsAI : MonoBehaviour
         SpawnMonster("Pumpkin",MonsterSpawnPos.LEFTUP);
         SpawnMonster("Pumpkin",MonsterSpawnPos.RIGHTUP);
         SpawnMonster("Pumpkin",MonsterSpawnPos.RIGHTDOWN);
-        yield return new WaitUntil(() => !_dialogTyper.sbWrite);
+        yield return new WaitUntil(() => !_dialogTyper.isSbWrite);
         Time.timeScale = 1;
     }
 
@@ -123,7 +154,7 @@ public class DongsAI : MonoBehaviour
         _dialogTyper.Enqueue("역시 사신님");
         _dialogTyper.Enqueue("이제 제대로\n가겠습니다");
         _dialogTyper.Enqueue("자 가자 얘들아!!");
-        yield return new WaitUntil(() => !_dialogTyper.sbWrite);
+        yield return new WaitUntil(() => !_dialogTyper.isSbWrite);
         Time.timeScale = 1;
         
         SpawnMonster("SkeletonHead",MonsterSpawnPos.DOWN);
@@ -143,7 +174,7 @@ public class DongsAI : MonoBehaviour
         Time.timeScale = 0;
         _dialogTyper.Enqueue("안돼!!");
         _dialogTyper.Enqueue("야근은 싫단 말이야!!!");
-        yield return new WaitUntil(() => !_dialogTyper.sbWrite);
+        yield return new WaitUntil(() => !_dialogTyper.isSbWrite);
         Time.timeScale = 1;
 
         for (int i = 0; i < spawnPos.Length; ++i)
@@ -167,7 +198,7 @@ public class DongsAI : MonoBehaviour
         _dialogTyper.Enqueue("이럴 수는 없다구!!!!!!!");
         _dialogTyper.Enqueue("어떻게 도망쳤는데!!!!!!");
         _dialogTyper.Enqueue("");
-        yield return new WaitUntil(() => !_dialogTyper.sbWrite);
+        yield return new WaitUntil(() => !_dialogTyper.isSbWrite);
         Time.timeScale = 1;
         StartCoroutine(RespawnMonster());
         yield return null;
@@ -183,6 +214,13 @@ public class DongsAI : MonoBehaviour
         yield return CoroutineTime.GetWaitForSecondsRealtime(1.5f);
         _dialogTyper.WriteNow("아아아아아아앜!!");
         yield return CoroutineTime.GetWaitForSecondsRealtime(1.5f);
+
+        NShooter shooter = transform.AddComponent<NShooter>();
+        shooter.AttackPrefabsName = new[] { "Dongs1Weapon","Dongs2Weapon" };
+        shooter.AttackDelay = new[] { 5.0f };
+        shooter.RepeatCount = 10;
+        shooter.RepeatTime = 0.3f;
+        
         yield return null;
     }
   
@@ -219,7 +257,8 @@ public class DongsAI : MonoBehaviour
         {
             for (int i = 0; i < spawnPos.Length; ++i)
             {
-                isMonsterDie[i].SetActive(true);            
+                if(isMonsterDie[i])
+                    isMonsterDie[i].SetActive(true);            
             }
             yield return CoroutineTime.GetWaitForSeconds(phase4RespawnTime);
         }

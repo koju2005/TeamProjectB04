@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8010018408901040274}
   m_Layer: 8
   m_Name: SkeletonHead
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,7 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackPrefabsName:
   - EnemyWeapon
-  AttackDelay: 0a000000
+  AttackDelay:
+  - 7
 --- !u!60 &4210364574775213854
 PolygonCollider2D:
   m_ObjectHideFlags: 0
