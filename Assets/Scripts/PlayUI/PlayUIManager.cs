@@ -62,9 +62,7 @@ public class PlayUIManager : MonoBehaviour
     {
         Time.timeScale = 0;
         if (loseUI)
-        {
             loseUI.SetActive(true);
-        }
     }
 
     public void Win()
