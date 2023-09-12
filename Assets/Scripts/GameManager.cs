@@ -18,16 +18,10 @@ namespace DefaultNamespace
         private GameObject _player;
         public static bool isApplicationExit = false;
         public int _stageIndex;
-        public bool endKey;
-
-
         public int monsterCount=0;
         public int ballCount = 0;
-        private bool stageClear4 = false;
-        private bool stageClear5 = false;
-        private bool stageClear6 = false;
-        private bool stageClear7 = false;
-        private bool stageClear8 = false;
+        public bool[] stageClear = new bool[5];
+
 
 
         public event Action win;
@@ -99,16 +93,16 @@ namespace DefaultNamespace
                     //클리어 창 뜨게 만들기
                     switch(_stageIndex)
                     {
+                        case 0:
+                            stageClear[0] = true; break;
+                        case 1:
+                            stageClear[1] = true; break;
+                        case 2:
+                            stageClear[2] = true; break;
+                        case 3:
+                            stageClear[3] = true; break;
                         case 4:
-                            stageClear4 = true; break;
-                        case 5:
-                            stageClear5 = true; break;
-                        case 6:
-                            stageClear6 = true; break;
-                        case 7:
-                            stageClear7 = true; break;
-                        case 8:
-                            stageClear8 = true; break;
+                            stageClear[4] = true; break;
                         default:
                             Debug.Log("스테이지 넘버 오류");
                             break;
@@ -149,17 +143,6 @@ namespace DefaultNamespace
                 }
             }
         }
-
-        public void stageClear()
-        {
-            
-        }
-
-        public void stageOver()
-        {
-
-        }
-
         public HashSet<GameObject>.Enumerator GetWeapons()
         {
             return _currentWeapons.GetEnumerator();
@@ -177,13 +160,9 @@ namespace DefaultNamespace
 
         public void LoadSelecteScene()
         {
-            _stageIndex = 3;
+            Time.timeScale = 1f;
+            _stageIndex = 8;
             LoadScene();
-        }
-
-        public void Update()
-        {
-            Debug.Log("공 숫자 : " + ballCount);
         }
     }
 }
