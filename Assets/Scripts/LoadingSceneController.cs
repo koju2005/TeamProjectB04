@@ -16,6 +16,7 @@ public class LoadingSceneController : MonoBehaviour
     public static void LoadScene(int i)
     {
         nextSceneindex = i;
+        Time.timeScale = 1;
         GameManager.Instance._prefabsPoolManager.Clear();
         SceneManager.LoadScene("LoadingScene");
     }

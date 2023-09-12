@@ -23,7 +23,7 @@ namespace DefaultNamespace.Data
             {
                 GameManager.Instance.AddWeapon(gameObject);
                 //GameManager.Instance.ballCount += 1;
-                Debug.Log(GameManager.Instance.ballCount);
+                //Debug.Log(GameManager.Instance.ballCount);
             }
         }
 

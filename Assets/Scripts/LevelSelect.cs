@@ -12,8 +12,9 @@ public class LevelSelect : MonoBehaviour
     public AudioClip Stage4;
     public AudioClip Stage5;
     AudioSource audioSource;
+    GameObject[] StageObject;
     private static LevelSelect instance = null;
-
+    bool[] stageclear = new bool[5];
     void Awake()
     {
         if (null == instance)
@@ -25,6 +26,7 @@ public class LevelSelect : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        StageClearCheck();
     }
     private void Start()
     {
@@ -42,17 +44,8 @@ public class LevelSelect : MonoBehaviour
          
                 if(hit.collider.tag == "Stage")
                 {
-                    int _stageindex = hit.collider.GetComponent<StageIndex>().stageindex;
-                    GameManager.Instance.endKey = false;
-                    //여기서 만약 스테이 클리어하면 아래 구문쓰면됨
-                    Transform stoneTransform = hit.collider.transform.Find("Stone");
-                    Transform flameTransform = hit.collider.transform.Find("Flame");
-                    flameTransform.gameObject.SetActive(false);
-                    Renderer stoneRenderer = stoneTransform.GetComponent<Renderer>();
-                    stoneRenderer.material.color = new Color(0,0,0,0.7f);
-                    //여기까지
-                    //게임매니저에서 IsWin 메서드 써서 따로빼도될듯
                     
+                    int _stageindex = hit.collider.GetComponent<StageIndex>().stageindex;
                     GameManager.Instance.SetSelectedStageIndex(_stageindex);
                     SoundSelect();
                     audioSource.Play();
@@ -68,21 +61,46 @@ public class LevelSelect : MonoBehaviour
         int index = GameManager.Instance._stageIndex;
         switch (index) 
         {   
-            case 4:
+            case 0:
               audioSource.clip = Stage1;
                 break;
-            case 5:
+            case 1:
                 audioSource.clip = Stage2;
                 break;
-            case 6:
+            case 2:
                 audioSource.clip = Stage3;
                 break;
-            case 7:
+            case 3:
                 audioSource.clip = Stage4;
                 break;
-            case 8:
+            case 4:
                 audioSource.clip = Stage5;
                 break;
+        }
+    }
+
+    void StageClearCheck()
+    {
+        StageObject = GameObject.FindGameObjectsWithTag("Stage");
+        for(int i = 0; i < 5; i++)
+        {
+            stageclear[i] = GameManager.Instance.stageClear[i];
+        }
+
+        for (int i = 0; i < 5; i++)
+        {
+            for(int j = 0; j < 5;j++)
+            {
+                if (stageclear[i] == true && StageObject[j].gameObject.GetComponent<StageIndex>().stageindex == i)
+                {
+                     Transform stoneTransform = StageObject[j].gameObject.transform.Find("Stone");
+                    Transform flameTransform = StageObject[j].gameObject.transform.Find("Flame");
+                    flameTransform.gameObject.SetActive(false);
+                    Renderer stoneRenderer = stoneTransform.GetComponent<Renderer>();
+                    stoneRenderer.material.color = new Color(0, 0, 0, 0.7f);
+                }
+            }
+
         }
     }
 }
