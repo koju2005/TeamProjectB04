@@ -20,6 +20,7 @@ namespace DefaultNamespace
         public int _stageIndex;
         public bool endKey;
 
+
         public int monsterCount=0;
         public int ballCount = 0;
         private bool stageClear4 = false;
@@ -28,6 +29,9 @@ namespace DefaultNamespace
         private bool stageClear7 = false;
         private bool stageClear8 = false;
 
+
+        public event Action win;
+        public event Action<string> lose;
 
         public static GameManager Instance
         {
@@ -110,9 +114,16 @@ namespace DefaultNamespace
                             break;
                     }
                     //Debug.Log("이게1번같은데?");
-                    endKey = true;
-
+                    win?.Invoke();
                 }
+            }
+        }
+
+        public void ballcheck()
+        {
+            if (ballCount == 0) 
+            {
+                lose?.Invoke("아몰라");
             }
         }
 
@@ -136,14 +147,6 @@ namespace DefaultNamespace
                     Invoke("ballcheck", 1f);
 
                 }
-            }
-        }
-
-        public void ballcheck()
-        {
-            if (ballCount == 0 && !endKey) 
-            {
-                LoadSelecteScene();
             }
         }
 
@@ -176,6 +179,11 @@ namespace DefaultNamespace
         {
             _stageIndex = 3;
             LoadScene();
+        }
+
+        public void Update()
+        {
+            Debug.Log("공 숫자 : " + ballCount);
         }
     }
 }

@@ -36,6 +36,7 @@ public class PlayUIManager : MonoBehaviour
     int _stageIndex;
 
 
+
     private void Awake()
     {
         _stageIndex = GameManager.Instance._stageIndex;
@@ -51,22 +52,23 @@ public class PlayUIManager : MonoBehaviour
 
         gameManager = GameManager.Instance;
         Player = gameManager.GetPlayer();
+        
         Player.GetComponent<Health>().OnDeath += Lose;
+        gameManager.win += Win;
+        gameManager.lose += Lose;
     }
 
-    private void Lose(string tag)
+    public void Lose(string tag)
     {
         Time.timeScale = 0;
         loseUI.SetActive(true);
     }
 
-    private void Win(string tag)
+    public void Win()
     {
-        if(gameManager.monsterCount <= 0)
-        {
-            Time.timeScale = 0;
-            winUI.SetActive(true);
-        }
+        Time.timeScale = 0;
+        winUI.SetActive(true);
+
     }
 
     public void OpenOptionUI()
@@ -83,12 +85,17 @@ public class PlayUIManager : MonoBehaviour
 
     public void MoveSelectScene()
     {
+        optionUI.SetActive(false);
+        winUI.SetActive(false);
+        loseUI.SetActive(false);
         Time.timeScale = 1;
-        SceneManager.LoadScene("SelcectScene");
+        gameManager.LoadSelecteScene();
     }
 
     public void RestartScene()
     {
+        winUI.SetActive(false);
+        loseUI.SetActive(false);
         Time.timeScale = 1;
         LoadingSceneController.LoadScene(_stageIndex);
     }
