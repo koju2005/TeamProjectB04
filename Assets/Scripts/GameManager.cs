@@ -19,7 +19,7 @@ namespace DefaultNamespace
         public static bool isApplicationExit = false;
         public int _stageIndex;
 
-        public int monsterCount=0;
+        public int monsterCount = 0;
         private bool stageClear1;
         private bool stageClear2;
         private bool stageClear3;
@@ -90,34 +90,34 @@ namespace DefaultNamespace
                 //if(플레이어목숨수 <0)
                 //{
                 Debug.Log("실패");
-                _stageIndex = 0;
-                LoadScene();
+                //_stageIndex = 0;
+                //LoadScene();
                 //}
 
             }
             else if (whoisDeadTag == "Monster")
             {
                 Debug.Log(monsterCount);
-                monsterCount-=1;
+                monsterCount -= 1;
                 Debug.Log(monsterCount);
-                if (monsterCount <= 0) 
+                if (monsterCount <= 0)
                 {
                     Debug.Log("클리어");
-                    switch(_stageIndex)
-                    {
-                        case 1:
-                            stageClear1 = true; break;
-                        case 2:
-                            stageClear2 = true; break;
-                        case 3:
-                            stageClear3 = true; break;
-                        case 4:
-                            stageClear4 = true; break;
-                        case 5:
-                            stageClear5 = true; break;
-                    }
-                    _stageIndex=0;
-                    LoadScene();
+                    //switch (_stageIndex)
+                    //{
+                    //    case 1:
+                    //        stageClear1 = true; break;
+                    //    case 2:
+                    //        stageClear2 = true; break;
+                    //    case 3:
+                    //        stageClear3 = true; break;
+                    //    case 4:
+                    //        stageClear4 = true; break;
+                    //    case 5:
+                    //        stageClear5 = true; break;
+                    //}
+                    //_stageIndex = 0;
+                    //LoadScene();
 
                 }
             }
