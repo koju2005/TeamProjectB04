@@ -7,9 +7,10 @@ using UnityEngine;
 public class HitSounding : CollisionInteraction
 {
     public AudioClip clip;
+    public float sound;
     public override void EnterCollsion(GameObject Owner, GameObject target)
     {
-        AudioSource.PlayClipAtPoint(clip,target.transform.position);
+        AudioSource.PlayClipAtPoint(clip,target.transform.position,sound);
     }
 
     public override void ExitCollsion(GameObject who, GameObject target)

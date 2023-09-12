@@ -8,12 +8,12 @@ using UnityEngine;
 public class Collisionable : PooledObject
 {
     [SerializeField] private CollisionInteraction[] action;
-    
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         foreach (var val in action)
         {
-            val.EnterCollsion(gameObject,other.gameObject);
+            val.EnterCollsion(gameObject, other.gameObject);
         }
     }
 
