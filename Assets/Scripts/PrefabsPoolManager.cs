@@ -51,12 +51,6 @@ namespace DefaultNamespace
         {
             poolGo.SetActive(false);
         }
-
-        // 사용
-        private void OnTakeFromPool(GameObject poolGo)
-        {
-            poolGo.SetActive(true);
-        }
         
         private GameObject FindObject(List<GameObject> pool)
         {

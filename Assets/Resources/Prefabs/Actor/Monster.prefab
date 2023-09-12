@@ -85,7 +85,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackPrefabsName:
   - EnemyWeapon
-  AttackDelay: 0a000000
+  AttackDelay:
+  - 10
 --- !u!60 &4485983916316875357
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -30,6 +30,11 @@ public class Health : MonoBehaviour
         monsterCount();
     }
 
+    private void OnEnable()
+    {
+        _health = MaxHealth;
+    }
+
     public void monsterCount() 
     {
         if (tag == "Monster") 
@@ -76,8 +81,9 @@ public class Health : MonoBehaviour
         return MaxHealth;
     }
 
-    public void Test(Func<GameObject,IEnumerator> a,GameObject test)
+    public void HitRecoveryColor(Func<GameObject,IEnumerator> recoveryFunction,GameObject hitRecoveryTarget)
     {
-        StartCoroutine(a.Invoke(test));
+        if(hitRecoveryTarget.activeSelf)
+            StartCoroutine(recoveryFunction.Invoke(hitRecoveryTarget));
     }
 }
