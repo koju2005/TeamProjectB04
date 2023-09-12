@@ -18,13 +18,16 @@ public class Health : MonoBehaviour
     {
         OnDeath += GameManager.Instance.CheckDeathCount;
         pool = GetComponent<PooledObject>();
-        monsterCount();
     }
 
     private void Start()
     {
         _health = MaxHealth;
         
+    }
+    private void OnEnable()
+    {
+        monsterCount();
     }
 
     public void monsterCount() 
