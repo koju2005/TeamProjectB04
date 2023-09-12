@@ -18,6 +18,7 @@ namespace DefaultNamespace
         private GameObject _player;
         public static bool isApplicationExit = false;
         public int _stageIndex;
+        public bool endKey;
 
         public int monsterCount=0;
         public int ballCount = 0;
@@ -113,6 +114,8 @@ namespace DefaultNamespace
                             Debug.Log("스테이지 넘버 오류");
                             break;
                     }
+                    //Debug.Log("이게1번같은데?");
+                    endKey = true;
                     LoadSelecteScene();
 
                 }
@@ -137,13 +140,14 @@ namespace DefaultNamespace
                 if (ballCount <= 0) 
                 {
                     Invoke("ballcheck", 1f);
+
                 }
             }
         }
 
         public void ballcheck()
         {
-            if (ballCount == 0) 
+            if (ballCount == 0 && !endKey) 
             {
                 LoadSelecteScene();
             }
