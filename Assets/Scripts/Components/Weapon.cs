@@ -22,13 +22,9 @@ namespace DefaultNamespace.Data
             if (gameObject.layer == LayerMask.NameToLayer("UserWeapon"))
             {
                 GameManager.Instance.AddWeapon(gameObject);
-
                 //GameManager.Instance.ballCount += 1;
-
                 Debug.Log(GameManager.Instance.ballCount);
             }
-            
-            
         }
 
         public void OnDisable()
@@ -45,7 +41,6 @@ namespace DefaultNamespace.Data
                             GameManager.Instance.ballCount -= 1;
                         }
                     }
-           
                     else
                         Destroy(gameObject);                
                 }
