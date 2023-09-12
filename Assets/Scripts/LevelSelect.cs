@@ -12,10 +12,23 @@ public class LevelSelect : MonoBehaviour
     public AudioClip Stage4;
     public AudioClip Stage5;
     AudioSource audioSource;
+    private static LevelSelect instance = null;
+
+    void Awake()
+    {
+        if (null == instance)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        DontDestroyOnLoad(gameObject);
     }
     void Update()
     {
