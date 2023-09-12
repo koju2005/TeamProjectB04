@@ -807,7 +807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0e1b6f0c638c948b38e344f9e732ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 20
+  MaxHealth: 10
   _health: 0
 --- !u!61 &459093031
 BoxCollider2D:
@@ -1200,7 +1200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0e1b6f0c638c948b38e344f9e732ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 20
+  MaxHealth: 10
   _health: 0
 --- !u!61 &835822750
 BoxCollider2D:
@@ -1310,7 +1310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0e1b6f0c638c948b38e344f9e732ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 20
+  MaxHealth: 10
   _health: 0
 --- !u!61 &1111806539
 BoxCollider2D:
@@ -1471,7 +1471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0e1b6f0c638c948b38e344f9e732ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 20
+  MaxHealth: 10
   _health: 0
 --- !u!61 &1198069480
 BoxCollider2D:
@@ -1800,7 +1800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0e1b6f0c638c948b38e344f9e732ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 60
+  MaxHealth: 30
   _health: 0
 --- !u!61 &1518630948
 BoxCollider2D:
@@ -1973,7 +1973,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: feb8cfe56aca3944cb6ed7348a752539, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ce9bf17deb89bda4f9cb7d4ba87ffdb5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
