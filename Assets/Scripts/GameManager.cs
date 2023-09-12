@@ -18,13 +18,15 @@ namespace DefaultNamespace
         private GameObject _player;
         public static bool isApplicationExit = false;
         public int _stageIndex;
+        public bool endKey;
 
         public int monsterCount=0;
-        private bool stageClear1;
-        private bool stageClear2;
-        private bool stageClear3;
-        private bool stageClear4;
-        private bool stageClear5;
+        public int ballCount = 0;
+        private bool stageClear4 = false;
+        private bool stageClear5 = false;
+        private bool stageClear6 = false;
+        private bool stageClear7 = false;
+        private bool stageClear8 = false;
 
 
         public static GameManager Instance
@@ -84,40 +86,37 @@ namespace DefaultNamespace
 
         public void CheckDeathCount(string whoisDeadTag)
         {
-            Debug.Log(whoisDeadTag);
             if (whoisDeadTag == "Player")
             {
-                //if(플레이어목숨수 <0)
-                //{
-                Debug.Log("실패");
-                _stageIndex = 0;
-                LoadScene();
-                //}
+                //아마 게임오버 창 뜨게 만들기
+                LoadSelecteScene();
 
             }
             else if (whoisDeadTag == "Monster")
             {
-                Debug.Log(monsterCount);
                 monsterCount-=1;
-                Debug.Log(monsterCount);
                 if (monsterCount <= 0) 
                 {
-                    Debug.Log("클리어");
+                    //클리어 창 뜨게 만들기
                     switch(_stageIndex)
                     {
-                        case 1:
-                            stageClear1 = true; break;
-                        case 2:
-                            stageClear2 = true; break;
-                        case 3:
-                            stageClear3 = true; break;
                         case 4:
                             stageClear4 = true; break;
                         case 5:
                             stageClear5 = true; break;
+                        case 6:
+                            stageClear6 = true; break;
+                        case 7:
+                            stageClear7 = true; break;
+                        case 8:
+                            stageClear8 = true; break;
+                        default:
+                            Debug.Log("스테이지 넘버 오류");
+                            break;
                     }
-                    _stageIndex=0;
-                    LoadScene();
+                    //Debug.Log("이게1번같은데?");
+                    endKey = true;
+                    LoadSelecteScene();
 
                 }
             }
@@ -126,11 +125,42 @@ namespace DefaultNamespace
         public void AddWeapon(GameObject weapon)
         {
             _currentWeapons.Add(weapon);
+            if (weapon.layer == LayerMask.NameToLayer("UserWeapon"))
+            {
+                ballCount += 1;
+            }
         }
 
         public void RemoveWeapon(GameObject weapon)
         {
             _currentWeapons.Remove(weapon);
+            if (weapon.layer == LayerMask.NameToLayer("UserWeapon"))
+            {
+                ballCount -= 1;
+                if (ballCount <= 0) 
+                {
+                    Invoke("ballcheck", 1f);
+
+                }
+            }
+        }
+
+        public void ballcheck()
+        {
+            if (ballCount == 0 && !endKey) 
+            {
+                LoadSelecteScene();
+            }
+        }
+
+        public void stageClear()
+        {
+            
+        }
+
+        public void stageOver()
+        {
+
         }
 
         public HashSet<GameObject>.Enumerator GetWeapons()
@@ -146,6 +176,12 @@ namespace DefaultNamespace
         public void LoadScene()
         {
             LoadingSceneController.LoadScene(_stageIndex);
+        }
+
+        public void LoadSelecteScene()
+        {
+            _stageIndex = 3;
+            LoadScene();
         }
     }
 }

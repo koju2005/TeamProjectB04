@@ -18,7 +18,6 @@ public class Health : MonoBehaviour
     {
         OnDeath += GameManager.Instance.CheckDeathCount;
         pool = GetComponent<PooledObject>();
-        monsterCount();
     }
 
     private void Start()
@@ -26,14 +25,21 @@ public class Health : MonoBehaviour
         _health = MaxHealth;
         
     }
+    private void OnEnable()
+    {
+        monsterCount();
+    }
+
+    private void OnEnable()
+    {
+        _health = MaxHealth;
+    }
 
     public void monsterCount() 
     {
         if (tag == "Monster") 
         {
             GameManager.Instance.monsterCount+=1;
-            Debug.Log(GameManager.Instance.monsterCount);
-            Debug.Log("¼ýÀÚ");
         }
     }
     public void AddHealth(int damage)
@@ -75,8 +81,9 @@ public class Health : MonoBehaviour
         return MaxHealth;
     }
 
-    public void Test(Func<GameObject,IEnumerator> a,GameObject test)
+    public void HitRecoveryColor(Func<GameObject,IEnumerator> recoveryFunction,GameObject hitRecoveryTarget)
     {
-        StartCoroutine(a.Invoke(test));
+        if(hitRecoveryTarget.activeSelf)
+            StartCoroutine(recoveryFunction.Invoke(hitRecoveryTarget));
     }
 }

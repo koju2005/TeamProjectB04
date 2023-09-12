@@ -8,9 +8,9 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
     
-    private PrefabsPoolManager _prefabsPoolManager;
+    protected PrefabsPoolManager _prefabsPoolManager;
     public string[] AttackPrefabsName;
-    public int[] AttackDelay;
+    public float[] AttackDelay;
 
     private Transform playerTransform;
     private Animator anim;
@@ -24,7 +24,7 @@ public class Shooter : MonoBehaviour
 
     private void Start()
     {
-        StartRoutine();
+        StartShootOperation();
         isFirst = false;
         playerTransform = GameManager.Instance.GetPlayer().transform;
        
@@ -34,11 +34,11 @@ public class Shooter : MonoBehaviour
     {
         if (!isFirst)
         {
-            StartRoutine();
+            StartShootOperation();
         }
     }
 
-    public void StartRoutine()
+    public virtual void StartShootOperation()
     {
         _prefabsPoolManager = GameManager.Instance._prefabsPoolManager;
         for (int i=0;i<AttackPrefabsName.Length;++i)
@@ -52,7 +52,7 @@ public class Shooter : MonoBehaviour
         StopAllCoroutines();
     }
 
-    IEnumerator ShootCoroutine(int i)
+    protected virtual IEnumerator ShootCoroutine(int i)
     {
         WaitForSeconds seconds = CoroutineTime.GetWaitForSeconds(AttackDelay[i]);
         while (true)
@@ -62,7 +62,7 @@ public class Shooter : MonoBehaviour
         }
     }
 
-    private void Shoot(int i)
+    protected void Shoot(int i)
     {
         GameObject weapon = _prefabsPoolManager.Get(AttackPrefabsName[i]);
         weapon.transform.position = transform.position;
