@@ -187,7 +187,7 @@ namespace DefaultNamespace
         }
         public void Update()
         {
-            Debug.Log("몬스터 " + monsterCount);
+            //Debug.Log("몬스터 " + monsterCount);
         }
 
         public void Reset()
