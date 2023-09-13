@@ -356,7 +356,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRange: {x: 1.5, y: 1.5}
-  phase4RespawnTime: 10
   _dialogTyper: {fileID: 1954556545}
   _PlayUIManager: {fileID: 1291902780}
   phaseMusic:
@@ -823,7 +822,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5819761428285497026, guid: e5207860a003c9a4d8cedc5e7c92b3e3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5819761428285497026, guid: e5207860a003c9a4d8cedc5e7c92b3e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
