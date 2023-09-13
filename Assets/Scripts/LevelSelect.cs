@@ -42,7 +42,7 @@ public class LevelSelect : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
          
-                if(hit.collider.tag == "Stage")
+                if(hit.collider.tag == "Stage" && hit.collider.GetComponent<StageIndex>().StageClear == false)
                 {
                     
                     int _stageindex = hit.collider.GetComponent<StageIndex>().stageindex;
@@ -91,10 +91,12 @@ public class LevelSelect : MonoBehaviour
         {
             for(int j = 0; j < 5;j++)
             {
-                if (stageclear[i] == true && StageObject[j].gameObject.GetComponent<StageIndex>().stageindex == i)
+                if (stageclear[i] == true && StageObject[j].gameObject.GetComponent<StageIndex>().stageindex == i+2)
                 {
+
                      Transform stoneTransform = StageObject[j].gameObject.transform.Find("Stone");
                     Transform flameTransform = StageObject[j].gameObject.transform.Find("Flame");
+                    StageObject[j].gameObject.GetComponent<StageIndex>().StageClear = true;
                     flameTransform.gameObject.SetActive(false);
                     Renderer stoneRenderer = stoneTransform.GetComponent<Renderer>();
                     stoneRenderer.material.color = new Color(0, 0, 0, 0.7f);
