@@ -166,5 +166,15 @@ namespace DefaultNamespace
             _stageIndex = 7;
             LoadScene();
         }
+
+        public void PlayBGM(AudioClip clip)
+        {
+            _soundManager.PlayBGM(clip);
+        }
+        
+        public void PlaySFX(AudioClip clip,Vector3 position)
+        {
+            _soundManager.PlaySFX(clip,position);
+        }
     }
 }
