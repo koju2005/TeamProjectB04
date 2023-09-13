@@ -1,7 +1,7 @@
 using DefaultNamespace;
 using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayUIManager : MonoBehaviour
 {
@@ -32,6 +32,7 @@ public class PlayUIManager : MonoBehaviour
     private GameObject loseUI;
     private GameObject winUI;
     private GameObject optionUI;
+    private Button OptionButton;
 
     int _stageIndex;
 
@@ -56,7 +57,10 @@ public class PlayUIManager : MonoBehaviour
         Player.GetComponent<Health>().OnDeath += Lose;
         gameManager.win += Win;
         gameManager.lose += Lose;
+
+        OptionButton = gamePlayUI.GetComponentInChildren<Button>();
     }
+    
 
     public void Lose(string tag)
     {
@@ -108,5 +112,10 @@ public class PlayUIManager : MonoBehaviour
             Player.GetComponent<Health>().OnDeath -= Lose;
         gameManager.win -= Win;
         gameManager.lose -= Lose;
+    }
+
+    public void OptionButtonEnable(bool value)
+    {
+        OptionButton.interactable = value;
     }
 }
