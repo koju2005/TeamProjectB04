@@ -93,7 +93,7 @@ public class LevelSelect : MonoBehaviour
             {
                 if (stageclear[i] == true && StageObject[j].gameObject.GetComponent<StageIndex>().stageindex == i)
                 {
-                     Transform stoneTransform = StageObject[j].gameObject.transform.Find("Stone");
+                    Transform stoneTransform = StageObject[j].gameObject.transform.Find("Stone");
                     Transform flameTransform = StageObject[j].gameObject.transform.Find("Flame");
                     flameTransform.gameObject.SetActive(false);
                     Renderer stoneRenderer = stoneTransform.GetComponent<Renderer>();

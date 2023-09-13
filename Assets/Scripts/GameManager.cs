@@ -11,6 +11,7 @@ namespace DefaultNamespace
     {
         public ItemManager _ItemManager { get; private set; }
         public PrefabsPoolManager _prefabsPoolManager { get; private set; }
+        public SoundManager _soundManager { get; private set; }
 
         public HashSet<GameObject> _currentWeapons { get; private set; }
 
@@ -53,6 +54,7 @@ namespace DefaultNamespace
             _ItemManager = GetComponent<ItemManager>();
             _prefabsPoolManager = GetComponent<PrefabsPoolManager>();
             _currentWeapons = new HashSet<GameObject>();
+            _soundManager = GetComponent<SoundManager>();
         }
 
         private void Start()
