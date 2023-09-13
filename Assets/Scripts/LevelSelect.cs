@@ -11,7 +11,6 @@ public class LevelSelect : MonoBehaviour
     public AudioClip Stage3;
     public AudioClip Stage4;
     public AudioClip Stage5;
-    AudioSource audioSource;
     GameObject[] StageObject;
     private static LevelSelect instance = null;
     bool[] stageclear = new bool[5];
@@ -29,10 +28,6 @@ public class LevelSelect : MonoBehaviour
         StageClearCheck();
         AllClearCheck();
     }
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
     void Update()
     {
         
@@ -42,15 +37,12 @@ public class LevelSelect : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-         
-                if(hit.collider.tag == "Stage" && hit.collider.GetComponent<StageIndex>().StageClear == false)
+                if (hit.collider.tag == "Stage" && hit.collider.GetComponent<StageIndex>().StageClear == false)
                 {
-                    
                     int _stageindex = hit.collider.GetComponent<StageIndex>().stageindex;
                     GameManager.Instance.SetSelectedStageIndex(_stageindex);
                     SoundSelect();
-                    audioSource.Play();
-                    GameManager.Instance.LoadScene();
+                   GameManager.Instance.LoadScene();
                    
                 }
             }
@@ -63,19 +55,19 @@ public class LevelSelect : MonoBehaviour
         switch (index) 
         {   
             case 2:
-              audioSource.clip = Stage1;
+                GameManager.Instance.PlayUI(Stage1);
                 break;
             case 3:
-                audioSource.clip = Stage2;
+                GameManager.Instance.PlayUI(Stage2);
                 break;
             case 4:
-                audioSource.clip = Stage3;
+                GameManager.Instance.PlayUI(Stage3);
                 break;
             case 5:
-                audioSource.clip = Stage4;
+                GameManager.Instance.PlayUI(Stage4);
                 break;
             case 6:
-                audioSource.clip = Stage5;
+                GameManager.Instance.PlayUI(Stage5);
                 break;
         }
     }

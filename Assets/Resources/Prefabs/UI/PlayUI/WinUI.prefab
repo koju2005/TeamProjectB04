@@ -36,7 +36,7 @@ RectTransform:
   - {fileID: 7023902254010796800}
   - {fileID: 126727623178050621}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d02085317841045b0b7b379eeb47be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OptionUI: {fileID: 0}
+  buttonPressSound: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
 --- !u!1 &3190100498489982240
 GameObject:
   m_ObjectHideFlags: 0

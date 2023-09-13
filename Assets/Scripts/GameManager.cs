@@ -51,6 +51,10 @@ namespace DefaultNamespace
 
         private void Awake()
         {
+            if (_instance != null && _instance != this)
+            {
+                Destroy(gameObject);
+            }
             _ItemManager = GetComponent<ItemManager>();
             _prefabsPoolManager = GetComponent<PrefabsPoolManager>();
             _currentWeapons = new HashSet<GameObject>();
@@ -181,13 +185,14 @@ namespace DefaultNamespace
             _soundManager.PlaySFX(clip, position);
         }
 
+        public void PlayUI(AudioClip clip)
+        {
+            _soundManager.PlayUI(clip);
+        }
+
         public void StopBGM()
         {
             _soundManager.StopBGM();
-        }
-        public void Update()
-        {
-            //Debug.Log("몬스터 " + monsterCount);
         }
 
         public void Reset()

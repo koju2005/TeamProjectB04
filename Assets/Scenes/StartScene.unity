@@ -448,6 +448,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 234422384}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &191412886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,6 +498,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191412883}
   m_CullTransparentMesh: 1
+--- !u!82 &234422384 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 289876210648228663, guid: a79c3080b6dfb8e4d89f5bd1519be835, type: 3}
+  m_PrefabInstance: {fileID: 1517058901}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &334896189
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,7 +1253,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1196372321}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1916170561}
+        m_TargetAssemblyTypeName: StartGame, Assembly-CSharp
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 234422384}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1196372321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1896,6 +1937,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 234422384}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1516610821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1942,6 +1995,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 289876210648228663, guid: a79c3080b6dfb8e4d89f5bd1519be835, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 289876210648228663, guid: a79c3080b6dfb8e4d89f5bd1519be835, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
+    - target: {fileID: 289876210648228663, guid: a79c3080b6dfb8e4d89f5bd1519be835, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2477811948824020081, guid: a79c3080b6dfb8e4d89f5bd1519be835, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1989,6 +2054,10 @@ PrefabInstance:
     - target: {fileID: 3041445810342550170, guid: a79c3080b6dfb8e4d89f5bd1519be835, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4531861197747335511, guid: a79c3080b6dfb8e4d89f5bd1519be835, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

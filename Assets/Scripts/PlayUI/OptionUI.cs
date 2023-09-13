@@ -15,6 +15,9 @@ namespace DefaultNamespace.PlayUI
             sm = GameManager.Instance._soundManager;
             BGM.onValueChanged.AddListener(sm.SetBGMVolume);
             SFX.onValueChanged.AddListener(sm.SetSFXVolume);
+
+            BGM.value = sm.GetBGMVolume();
+            SFX.value = sm.GetSFXVolume();
         }
     }
 }
