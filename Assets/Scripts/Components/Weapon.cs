@@ -1,7 +1,5 @@
 ﻿using System;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 
 namespace DefaultNamespace.Data
