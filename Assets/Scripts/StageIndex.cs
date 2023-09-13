@@ -5,4 +5,5 @@ using UnityEngine;
 public class StageIndex : MonoBehaviour
 {
     [SerializeField] public int stageindex;
+    public bool StageClear;
 }

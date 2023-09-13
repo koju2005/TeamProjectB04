@@ -93,15 +93,15 @@ namespace DefaultNamespace
                     //클리어 창 뜨게 만들기
                     switch(_stageIndex)
                     {
-                        case 0:
-                            stageClear[0] = true; break;
-                        case 1:
-                            stageClear[1] = true; break;
                         case 2:
-                            stageClear[2] = true; break;
+                            stageClear[0] = true; break;
                         case 3:
-                            stageClear[3] = true; break;
+                            stageClear[1] = true; break;
                         case 4:
+                            stageClear[2] = true; break;
+                        case 5:
+                            stageClear[3] = true; break;
+                        case 6:
                             stageClear[4] = true; break;
                         default:
                             Debug.Log("스테이지 넘버 오류");

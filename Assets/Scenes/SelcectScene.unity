@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageindex: 5
+  StageClear: 0
 --- !u!65 &15425272
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -200,6 +201,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 927375010643826705, guid: a79c3080b6dfb8e4d89f5bd1519be835, type: 3}
+      propertyPath: stageClear.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 927375010643826705, guid: a79c3080b6dfb8e4d89f5bd1519be835, type: 3}
+      propertyPath: stageClear.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2477811948824020081, guid: a79c3080b6dfb8e4d89f5bd1519be835, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1371,6 +1380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageindex: 6
+  StageClear: 0
 --- !u!65 &782235048
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1440,6 +1450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageindex: 3
+  StageClear: 0
 --- !u!65 &999477873
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1547,6 +1558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageindex: 2
+  StageClear: 0
 --- !u!1 &1002742097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,6 +1658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageindex: 4
+  StageClear: 0
 --- !u!65 &1073900812
 BoxCollider:
   m_ObjectHideFlags: 0
