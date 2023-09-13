@@ -185,10 +185,6 @@ namespace DefaultNamespace
         {
             _soundManager.StopBGM();
         }
-        public void Update()
-        {
-            Debug.Log("몬스터 " + monsterCount);
-        }
 
         public void Reset()
         {

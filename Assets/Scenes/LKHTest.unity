@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0e1b6f0c638c948b38e344f9e732ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 50
+  MaxHealth: 20
   _health: 0
 --- !u!60 &288766658
 PolygonCollider2D:
@@ -356,15 +356,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRange: {x: 1.5, y: 1.5}
-  moveSpeed: 1
   phase4RespawnTime: 10
   _dialogTyper: {fileID: 1954556545}
+  _PlayUIManager: {fileID: 1291902780}
   phaseMusic:
   - {fileID: 0}
   - {fileID: 8300000, guid: 2489abb8975147b43a926b8db72cb096, type: 3}
   - {fileID: 8300000, guid: 07e5407cdf3f3844eae2f075e1b4569c, type: 3}
   - {fileID: 8300000, guid: 07e5407cdf3f3844eae2f075e1b4569c, type: 3}
-  - {fileID: 8300000, guid: 07e5407cdf3f3844eae2f075e1b4569c, type: 3}
+  - {fileID: 8300000, guid: d580d069910fca24396d9640536a758b, type: 3}
 --- !u!1 &338025777 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3041445810342550170, guid: a79c3080b6dfb8e4d89f5bd1519be835, type: 3}
@@ -823,7 +823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5819761428285497026, guid: e5207860a003c9a4d8cedc5e7c92b3e3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.59
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5819761428285497026, guid: e5207860a003c9a4d8cedc5e7c92b3e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1208,6 +1208,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1291902780 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3864306129072307731, guid: e7ecc12bad616f647888ddb6afa6f1c4, type: 3}
+  m_PrefabInstance: {fileID: 409793788}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b3f9862d8e999489832ca15a75cdff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1402608741
 GameObject:
   m_ObjectHideFlags: 0
