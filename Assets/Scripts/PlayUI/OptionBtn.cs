@@ -7,7 +7,6 @@ public class OptionBtn : MonoBehaviour
 {
     PlayUIManager m;
     [SerializeField] private AudioClip buttonPressSound;
-    [SerializeField] private AudioClip OpenUI;
     private void Awake()
     {
         m = PlayUIManager.instance;
