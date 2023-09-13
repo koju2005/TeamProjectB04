@@ -31,6 +31,11 @@ public class Health : MonoBehaviour
         _health = MaxHealth;
     }
 
+    private void OnDisable()
+    {
+        OnDeath?.Invoke(tag);
+    }
+
 
     public void monsterCount() 
     {
@@ -52,7 +57,6 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
-        OnDeath?.Invoke(tag);
         if (pool)
         {
             pool.OnRelease(gameObject);

@@ -632,7 +632,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -648,6 +648,7 @@ GameObject:
   - component: {fileID: 6545814875210241225}
   - component: {fileID: 4030216628744623125}
   - component: {fileID: 1891739368167078772}
+  - component: {fileID: 5074726119403100094}
   m_Layer: 5
   m_Name: OptionUI
   m_TagString: Untagged
@@ -676,7 +677,7 @@ RectTransform:
   - {fileID: 1424644354431903516}
   - {fileID: 125056231082879199}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -746,6 +747,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5074726119403100094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2607956130019133140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d13bf6731e24a91ae782dc387cd3c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 368521610455013260}
+  SFX: {fileID: 5648059252974754348}
 --- !u!1 &3414299122844207568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,7 +1172,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

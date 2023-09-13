@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using DefaultNamespace;
 using DefaultNamespace.Common;
@@ -13,11 +14,13 @@ public class DongsAI : MonoBehaviour
     [SerializeField] private int moveSpeed=1;
     [SerializeField] private float phase4RespawnTime = 10f;
     [SerializeField] private DialogTyper _dialogTyper;
-    [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip[] phaseMusic;
+    [SerializeField] private PlayUIManager _PlayUIManager;
+    //[SerializeField] private 
     private Health _health;
     private PrefabsPoolManager _prefabsManager;
     private SpriteRenderer _SpriteRenderer;
+    private SoundManager _SoundManager;
     
     
     private bool NextOperation;
@@ -32,6 +35,7 @@ public class DongsAI : MonoBehaviour
         _health = GetComponent<Health>();
         _health.OnHealthChanged += Interrupt;
         _SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        _SoundManager = GameManager.Instance._soundManager;
     }
 
     private void Start()
@@ -39,6 +43,11 @@ public class DongsAI : MonoBehaviour
         _prefabsManager = GameManager.Instance._prefabsPoolManager;
         currentPhase = StartCoroutine(phase1());
         spawnPosSetting();
+    }
+
+    private void OnDestroy()
+    {
+        _PlayUIManager.OptionButtonEnable(true);
     }
 
     private enum MonsterSpawnPos
@@ -100,7 +109,8 @@ public class DongsAI : MonoBehaviour
     private IEnumerator Ending()
     {
         phaseLevel = 6;
-        ChangeSong();
+        _PlayUIManager.OptionButtonEnable(false);
+        ChangeBGM();
         Time.timeScale = 0;
         _dialogTyper.Enqueue("아..아...");
         _dialogTyper.Enqueue("아..아...");
@@ -129,12 +139,14 @@ public class DongsAI : MonoBehaviour
         yield return CoroutineTime.GetWaitForSecondsRealtime(7f);
         Time.timeScale = 1;
         _health.AddHealth(-100);
+        _PlayUIManager.OptionButtonEnable(true);
     }
 
     private IEnumerator phase1()
     {
         phaseLevel = 1;
-        ChangeSong();
+        ChangeBGM();
+        _PlayUIManager.OptionButtonEnable(false);
         Time.timeScale = 0;
         yield return CoroutineTime.GetWaitForSecondsRealtime(1);
         _dialogTyper.Enqueue("여기까지 \n잘 오셨습니다.");
@@ -148,6 +160,7 @@ public class DongsAI : MonoBehaviour
         SpawnMonster("Pumpkin",MonsterSpawnPos.RIGHTUP);
         SpawnMonster("Pumpkin",MonsterSpawnPos.RIGHTDOWN);
         yield return new WaitUntil(() => !_dialogTyper.isSbWrite);
+        _PlayUIManager.OptionButtonEnable(true);
         Time.timeScale = 1;
     }
 
@@ -157,8 +170,9 @@ public class DongsAI : MonoBehaviour
   
         _dialogTyper.WriteNow("으윽!");
         yield return CoroutineTime.GetWaitForSecondsRealtime(1.5f);
-        ChangeSong();
-
+        ChangeBGM();
+        _PlayUIManager.OptionButtonEnable(false);
+        
         Time.timeScale = 0;
         _dialogTyper.Enqueue("약하시진 않군요");
         _dialogTyper.Enqueue("역시 사신님");
@@ -171,7 +185,7 @@ public class DongsAI : MonoBehaviour
         SpawnMonster("SkeletonHead",MonsterSpawnPos.UP);
         SpawnMonster("SkeletonHead",MonsterSpawnPos.RIGHT);
         SpawnMonster("SkeletonHead",MonsterSpawnPos.LEFT);
-        
+        _PlayUIManager.OptionButtonEnable(true);
         
     }
 
@@ -182,7 +196,8 @@ public class DongsAI : MonoBehaviour
         _dialogTyper.WriteNow("아아아아앜!");
         yield return CoroutineTime.GetWaitForSecondsRealtime(1.5f);
         
-        ChangeSong();
+        ChangeBGM();
+        _PlayUIManager.OptionButtonEnable(false);
         Time.timeScale = 0;
         _dialogTyper.Enqueue("안돼!!");
         _dialogTyper.Enqueue("야근은 싫단 말이야!!!");
@@ -194,7 +209,7 @@ public class DongsAI : MonoBehaviour
         {
             isMonsterDie[i].SetActive(true);
         }
-
+        _PlayUIManager.OptionButtonEnable(true);
         StartCoroutine(MoveSideStep());
         yield return null;
     }
@@ -207,8 +222,8 @@ public class DongsAI : MonoBehaviour
         yield return CoroutineTime.GetWaitForSecondsRealtime(1.5f);
         _dialogTyper.WriteNow("아아아아아앜!!");
         yield return CoroutineTime.GetWaitForSecondsRealtime(1.5f);
-        ChangeSong();
-        
+        ChangeBGM();
+        _PlayUIManager.OptionButtonEnable(false);
         Time.timeScale = 0;
         _dialogTyper.Enqueue("안돼!!!!!!");
         _dialogTyper.Enqueue("어떻게 도망쳤는데!!!!!!");
@@ -216,6 +231,7 @@ public class DongsAI : MonoBehaviour
         _dialogTyper.Enqueue("절대 붙잡혀 줄 수 없어!!!");
         yield return new WaitUntil(() => !_dialogTyper.isSbWrite);
         Time.timeScale = 1;
+        _PlayUIManager.OptionButtonEnable(true);
         StartCoroutine(RespawnMonster());
         yield return null;
     }
@@ -223,21 +239,21 @@ public class DongsAI : MonoBehaviour
     private IEnumerator phase5()
     {
         phaseLevel = 5;
-        
+        _PlayUIManager.OptionButtonEnable(false);
         _dialogTyper.WriteNow("아아아아앜!");
         yield return CoroutineTime.GetWaitForSecondsRealtime(1.5f);
         _dialogTyper.WriteNow("아아아아아앜!!");
         yield return CoroutineTime.GetWaitForSecondsRealtime(1.5f);
         _dialogTyper.WriteNow("아아아아아아앜!!");
         yield return CoroutineTime.GetWaitForSecondsRealtime(1.5f);
-        ChangeSong();
+        ChangeBGM();
         
         NShooter shooter = transform.AddComponent<NShooter>();
         shooter.AttackPrefabsName = new[] { "Dongs1Weapon","Dongs2Weapon" };
         shooter.AttackDelay = new[] { 5.0f };
         shooter.RepeatCount = 10;
         shooter.RepeatTime = 0.3f;
-        
+        _PlayUIManager.OptionButtonEnable(true);
         yield return null;
     }
   
@@ -281,10 +297,8 @@ public class DongsAI : MonoBehaviour
         }
     }
 
-    private void ChangeSong()
+    private void ChangeBGM()
     {
-        _audioSource.Stop();
-        _audioSource.clip = phaseMusic[phaseLevel];
-        _audioSource.Play();
+        _SoundManager.PlayBGM(phaseMusic[phaseLevel]);
     }
 }
