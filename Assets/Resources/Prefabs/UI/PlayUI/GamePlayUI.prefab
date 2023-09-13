@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d02085317841045b0b7b379eeb47be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OptionUI: {fileID: 2607956130019133140, guid: 4494255b5c776a94493236022d3a7867, type: 3}
+  buttonPressSound: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
 --- !u!1 &1800811814196638336
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +605,7 @@ RectTransform:
   - {fileID: 5619370102050856881}
   - {fileID: 171286953824605247}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

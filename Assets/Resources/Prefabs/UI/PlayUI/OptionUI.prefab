@@ -123,7 +123,6 @@ GameObject:
   - component: {fileID: 3147567806856242590}
   - component: {fileID: 8033332230432193898}
   - component: {fileID: 8313394384664408145}
-  - component: {fileID: 5871578954697515653}
   m_Layer: 5
   m_Name: ResumeBtn
   m_TagString: Untagged
@@ -234,7 +233,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5871578954697515653}
+      - m_Target: {fileID: 8953201109737571293}
         m_TargetAssemblyTypeName: OptionBtn, Assembly-CSharp
         m_MethodName: CloseMenu
         m_Mode: 1
@@ -246,18 +245,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5871578954697515653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755308546068436124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13d02085317841045b0b7b379eeb47be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2278845396349447042
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +636,7 @@ GameObject:
   - component: {fileID: 4030216628744623125}
   - component: {fileID: 1891739368167078772}
   - component: {fileID: 5074726119403100094}
+  - component: {fileID: 8953201109737571293}
   m_Layer: 5
   m_Name: OptionUI
   m_TagString: Untagged
@@ -761,6 +749,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 368521610455013260}
   SFX: {fileID: 5648059252974754348}
+--- !u!114 &8953201109737571293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2607956130019133140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d02085317841045b0b7b379eeb47be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPressSound: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
+  OpenUI: {fileID: 0}
 --- !u!1 &3414299122844207568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,7 +1405,6 @@ GameObject:
   - component: {fileID: 6041286822619528667}
   - component: {fileID: 3566052007040694767}
   - component: {fileID: 3466953264268592405}
-  - component: {fileID: 3206288859445436188}
   m_Layer: 5
   m_Name: MenuBtn
   m_TagString: Untagged
@@ -1514,7 +1515,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3206288859445436188}
+      - m_Target: {fileID: 8953201109737571293}
         m_TargetAssemblyTypeName: OptionBtn, Assembly-CSharp
         m_MethodName: SelectScene
         m_Mode: 1
@@ -1526,18 +1527,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3206288859445436188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6369487122256899120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13d02085317841045b0b7b379eeb47be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6741478105342263996
 GameObject:
   m_ObjectHideFlags: 0
