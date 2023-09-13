@@ -60,6 +60,7 @@
                ㅁ.노동균
 
    2.Sound
+   
       (1).StartScene
          배경음악 - 유니티 에셋스토어 \ Unity Technologies
       (2).SelectScene
