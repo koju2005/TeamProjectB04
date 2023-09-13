@@ -184,8 +184,12 @@ namespace DefaultNamespace
         {
             _soundManager.PlaySFX(clip, position);
         }
+        public void PlayUISound()
+        {
+            _soundManager.PlayUI();
+        }
 
-        public void PlayUI(AudioClip clip)
+        public void PlayUISound(AudioClip clip)
         {
             _soundManager.PlayUI(clip);
         }

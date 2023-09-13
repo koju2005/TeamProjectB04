@@ -7,7 +7,6 @@ public class OptionBtn : MonoBehaviour
 {
     PlayUIManager m;
     [SerializeField] private AudioClip buttonPressSound;
-    [SerializeField] private AudioClip OpenUI;
     private void Awake()
     {
         m = PlayUIManager.instance;
@@ -16,25 +15,36 @@ public class OptionBtn : MonoBehaviour
 
     public void OpenMenu()
     {
-        GameManager.Instance.PlayUI(buttonPressSound);
-        m.OpenOptionUI();
+        GameManager.Instance.PlayUISound(buttonPressSound);
+        if(m)
+            m.OpenOptionUI();
+        
     }
 
     public void CloseMenu()
     {
-        GameManager.Instance.PlayUI(buttonPressSound);
-        m.CloseOptionUI();
+        GameManager.Instance.PlayUISound(buttonPressSound);
+        if(m)   
+            m.CloseOptionUI();
     }
 
     public void Retry()
     {
-        GameManager.Instance.PlayUI(buttonPressSound);
-        m.RestartScene();
+        GameManager.Instance.PlayUISound(buttonPressSound);
+        if(m)
+            m.RestartScene();
     }
 
     public void SelectScene()
     {
-        GameManager.Instance.PlayUI(buttonPressSound);
-        m.MoveSelectScene();
+        GameManager.Instance.PlayUISound(buttonPressSound);
+        if(m)
+            m.MoveSelectScene();
+    }
+
+    public void MainScene()
+    {
+        GameManager.Instance.PlayUISound(buttonPressSound);
+        LoadingSceneController.LoadScene(0);
     }
 }

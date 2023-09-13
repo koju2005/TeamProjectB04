@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0e1b6f0c638c948b38e344f9e732ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 80
+  MaxHealth: 65
   _health: 2
 --- !u!60 &117587504
 PolygonCollider2D:
