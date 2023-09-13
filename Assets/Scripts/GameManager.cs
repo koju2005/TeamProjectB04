@@ -89,8 +89,9 @@ namespace DefaultNamespace
 
             if (whoisDeadTag == "Monster")
             {
-                monsterCount -= 1;
-                if (monsterCount <= 0)
+                bool isAllClear = true;
+                monsterCount-=1;
+                if (monsterCount <= 0) 
                 {
                     //클리어 창 뜨게 만들기
                     switch (_stageIndex)
@@ -109,8 +110,11 @@ namespace DefaultNamespace
                             Debug.Log("스테이지 넘버 오류");
                             break;
                     }
-                    //Debug.Log("이게1번같은데?");
+                    
+                    
                     win?.Invoke();
+                    //Debug.Log("이게1번같은데?");
+                    
                 }
             }
         }
@@ -179,6 +183,11 @@ namespace DefaultNamespace
         public void Update()
         {
             Debug.Log("몬스터 " + monsterCount);
+        }
+
+        public void Reset()
+        {
+            Array.Fill(stageClear,false);
         }
     }
 }
