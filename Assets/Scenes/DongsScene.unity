@@ -365,7 +365,6 @@ MonoBehaviour:
   moveSpeed: 1
   phase4RespawnTime: 10
   _dialogTyper: {fileID: 2017608771}
-  _audioSource: {fileID: 0}
   phaseMusic:
   - {fileID: 0}
   - {fileID: 8300000, guid: 6880e74c5281e428cace07ef42b5a6d9, type: 3}
@@ -374,6 +373,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1848e5c0f65bc1542a32b7b6c41f30a4, type: 3}
   - {fileID: 8300000, guid: 10546d9649879d14e8277d84c34d122e, type: 3}
   - {fileID: 8300000, guid: c24fff81e3e63c3499716b64cdaf6032, type: 3}
+  _PlayUIManager: {fileID: 1909434723}
 --- !u!1001 &166174598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1720,6 +1720,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1909434723 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3864306129072307731, guid: e7ecc12bad616f647888ddb6afa6f1c4, type: 3}
+  m_PrefabInstance: {fileID: 1595572805}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b3f9862d8e999489832ca15a75cdff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1989129527
 GameObject:
   m_ObjectHideFlags: 0
