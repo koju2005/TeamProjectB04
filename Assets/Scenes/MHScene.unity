@@ -714,6 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ada760773d588984687f169f1fb5050c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changeTime: 0
   change: {fileID: 0}
 --- !u!1001 &831966438
 PrefabInstance:
@@ -1274,6 +1275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ada760773d588984687f169f1fb5050c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changeTime: 0
   change: {fileID: 0}
 --- !u!1 &1628245858 stripped
 GameObject:
@@ -1619,7 +1621,7 @@ PrefabInstance:
       objectReference: {fileID: 126687287, guid: 069a64fcb6fb9d0489249231de323f7c, type: 3}
     - target: {fileID: 6860353043871303993, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
       propertyPath: MaxHealth
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1665,6 +1667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ada760773d588984687f169f1fb5050c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changeTime: 0
   change: {fileID: 0}
 --- !u!1 &1916424797
 GameObject:
@@ -1844,6 +1847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ada760773d588984687f169f1fb5050c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changeTime: 0
   change: {fileID: 0}
 --- !u!1 &2069146510 stripped
 GameObject:
@@ -2044,4 +2048,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ada760773d588984687f169f1fb5050c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changeTime: 3
   change: {fileID: 0}

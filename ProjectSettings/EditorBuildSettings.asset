@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MsStage.unity
     guid: a44fc1e23f75078469002197ed0464a9
   - enabled: 1
-    path: "Assets/Scenes/\uBC15\uBBFC\uD601\uD14C\uC2A4\uD2B8\uC52C.unity"
+    path: Assets/Scenes/MHScene.unity
     guid: 17719371f22799147991439870cb2193
   - enabled: 1
     path: Assets/Scenes/LKHTest.unity
