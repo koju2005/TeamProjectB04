@@ -111,7 +111,6 @@ namespace DefaultNamespace
                         case 6:
                             stageClear[4] = true; break;
                         default:
-                            Debug.Log("스테이지 넘버 오류");
                             break;
                     }
                     
