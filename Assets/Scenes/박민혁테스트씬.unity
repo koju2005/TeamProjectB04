@@ -668,7 +668,7 @@ PrefabInstance:
       objectReference: {fileID: 274007747, guid: 069a64fcb6fb9d0489249231de323f7c, type: 3}
     - target: {fileID: 6860353043871303993, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
       propertyPath: MaxHealth
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -677,6 +677,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1095270360194539378, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 797415838}
+    - targetCorrespondingSourceObject: {fileID: 1095270360194539378, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 797415839}
   m_SourcePrefab: {fileID: 100100000, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
 --- !u!4 &797415834 stripped
 Transform:
@@ -699,6 +702,19 @@ MonoBehaviour:
   - bone
   AttackDelay:
   - 5
+--- !u!114 &797415839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236325352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada760773d588984687f169f1fb5050c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  change: {fileID: 0}
 --- !u!1001 &831966438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -801,7 +817,7 @@ PrefabInstance:
       objectReference: {fileID: -830620388, guid: 069a64fcb6fb9d0489249231de323f7c, type: 3}
     - target: {fileID: 6860353043871303993, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
       propertyPath: MaxHealth
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -810,6 +826,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1095270360194539378, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1556945811}
+    - targetCorrespondingSourceObject: {fileID: 1095270360194539378, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1556945812}
   m_SourcePrefab: {fileID: 100100000, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
 --- !u!4 &831966439 stripped
 Transform:
@@ -1132,7 +1151,7 @@ PrefabInstance:
       objectReference: {fileID: 120610173, guid: 069a64fcb6fb9d0489249231de323f7c, type: 3}
     - target: {fileID: 6860353043871303993, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
       propertyPath: MaxHealth
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7155706311257973308, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1145,6 +1164,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1095270360194539378, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2051612215}
+    - targetCorrespondingSourceObject: {fileID: 1095270360194539378, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2051612216}
   m_SourcePrefab: {fileID: 100100000, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
 --- !u!4 &1336660164 stripped
 Transform:
@@ -1240,6 +1262,19 @@ MonoBehaviour:
   - bone
   AttackDelay:
   - 5
+--- !u!114 &1556945812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556945807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada760773d588984687f169f1fb5050c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  change: {fileID: 0}
 --- !u!1 &1628245858 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1095270360194539378, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
@@ -1584,7 +1619,7 @@ PrefabInstance:
       objectReference: {fileID: 126687287, guid: 069a64fcb6fb9d0489249231de323f7c, type: 3}
     - target: {fileID: 6860353043871303993, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
       propertyPath: MaxHealth
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1593,6 +1628,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1095270360194539378, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1872555180}
+    - targetCorrespondingSourceObject: {fileID: 1095270360194539378, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1872555181}
   m_SourcePrefab: {fileID: 100100000, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
 --- !u!4 &1872555176 stripped
 Transform:
@@ -1615,6 +1653,19 @@ MonoBehaviour:
   - bone
   AttackDelay:
   - 5
+--- !u!114 &1872555181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628245858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada760773d588984687f169f1fb5050c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  change: {fileID: 0}
 --- !u!1 &1916424797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,6 +1832,19 @@ MonoBehaviour:
   - bone
   AttackDelay:
   - 5
+--- !u!114 &2051612216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051612211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada760773d588984687f169f1fb5050c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  change: {fileID: 0}
 --- !u!1 &2069146510 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8587370907170552629, guid: f443090fadbe1bf4d8b452423ea54273, type: 3}
@@ -1934,7 +1998,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6860353043871303993, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
       propertyPath: MaxHealth
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1943,6 +2007,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1095270360194539378, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2124416100}
+    - targetCorrespondingSourceObject: {fileID: 1095270360194539378, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2124416101}
   m_SourcePrefab: {fileID: 100100000, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
 --- !u!4 &2124416096 stripped
 Transform:
@@ -1965,3 +2032,16 @@ MonoBehaviour:
   - parkwater
   AttackDelay:
   - 3
+--- !u!114 &2124416101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41930670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada760773d588984687f169f1fb5050c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  change: {fileID: 0}
