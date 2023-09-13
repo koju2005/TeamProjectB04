@@ -56,6 +56,11 @@ public class SoundManager : MonoBehaviour
         bgm.clip = clip;
         bgm.Play();
     }
+
+    public void StopBGM()
+    {
+        bgm.Stop();
+    }
     
     public void PlaySFX(AudioClip clip,Vector3 position)
     {

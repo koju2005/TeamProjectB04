@@ -19,6 +19,7 @@ public class Scenario : MonoBehaviour
 
     private IEnumerator scenario()
     {
+        GameManager.Instance.StopBGM();
         typer.Enqueue("그렇게...");
         typer.Enqueue("저승에서 일어났었던");
         typer.Enqueue("저승인들의 도망 사건은");
