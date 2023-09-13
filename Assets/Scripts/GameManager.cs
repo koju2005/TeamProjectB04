@@ -180,6 +180,11 @@ namespace DefaultNamespace
         {
             _soundManager.PlaySFX(clip, position);
         }
+
+        public void StopBGM()
+        {
+            _soundManager.StopBGM();
+        }
         public void Update()
         {
             Debug.Log("몬스터 " + monsterCount);

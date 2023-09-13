@@ -49,17 +49,18 @@ public class DialogTyper : MonoBehaviour
         {
             while (printQueue.Count > 0)
             {
+                isSbWrite = true;
                 string typeString = printQueue.Peek();
                 yield return StartCoroutine(TypePrint(typeString));
                 printQueue.Dequeue();
             }
+            isSbWrite = false;
             yield return new WaitUntil(() => printQueue.Count > 0);
         }
     }
     
     private IEnumerator TypePrint(string typeString)
     {
-        isSbWrite = true;
         foreach (var c in typeString)
         {
             sb.Append(c);
@@ -67,16 +68,14 @@ public class DialogTyper : MonoBehaviour
             if (c != ' ')
             {
                 int idx = Random.Range(0, typeSound.Length);
-                GameManager.Instance.PlaySFX(typeSound[idx],transform.position);
+                GameManager.Instance.PlaySFX(typeSound[idx], transform.position);
             }
-                
-            
+
             yield return CoroutineTime.GetWaitForSecondsRealtime(typeSpeed);
         }
         sb.Clear();
         yield return CoroutineTime.GetWaitForSecondsRealtime(typeEndWaitTime);
         Dialog.text = "";
-        isSbWrite = false;
     }
     
     private IEnumerator WriteNowCoroutine(string typeString)
