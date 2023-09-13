@@ -137,7 +137,7 @@ public class LKHAI : MonoBehaviour
         _anim.SetBool("isDead", true);
         _dialogTyper.Enqueue("²ô¾Æ¾Æ¾Æ¾Æ¾Æ¾Æ¾Ç!!!!");
 
-        yield return CoroutineTime.GetWaitForSecondsRealtime(7f);
+        yield return CoroutineTime.GetWaitForSecondsRealtime(6f);
         Time.timeScale = 1;
         _health.AddHealth(-100);
     }
