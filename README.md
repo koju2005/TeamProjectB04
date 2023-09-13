@@ -40,7 +40,41 @@
 # 사용된 리소스
 
    1.Art
+      (1).StartScene
+         
+      (2).SelectScene
+            StageObj          -itch.io/ animated pixel-art assets/elenetari
+            BackGround Image  - Zuhria Alfitra
+      (3).LoadingScene
       
+      (4).Stage
+               ㄱ.김강현
+                  Bullet  - https://kr.freepik.com
+                  Monster - https://www.flaticon.com
+               ㄴ.김민석
+         
+               ㄷ.박민혁
+               
+               ㄹ.이경현
+               
+               ㅁ.노동균
 
    2.Sound
+      (1).StartScene
+         배경음악 - 유니티 에셋스토어 \ Unity Technologies
+      (2).SelectScene
+         오브젝트효과음 - https://pgtd.tistory.com
+      (3).LoadingScene
+      
+      (4).Stage
+               ㄱ.김강현
+         
+               ㄴ.김민석
+         
+               ㄷ.박민혁
+               
+               ㄹ.이경현
+               
+               ㅁ.노동균
+
       
