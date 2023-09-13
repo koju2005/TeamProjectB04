@@ -19,7 +19,7 @@ namespace DefaultNamespace
         private GameObject _player;
         public static bool isApplicationExit = false;
         public int _stageIndex;
-        public int monsterCount=0;
+        public int monsterCount = 0;
         public int ballCount = 0;
         public bool[] stageClear = new bool[5];
 
@@ -86,14 +86,14 @@ namespace DefaultNamespace
 
         public void CheckDeathCount(string whoisDeadTag)
         {
-            
+
             if (whoisDeadTag == "Monster")
             {
-                monsterCount-=1;
-                if (monsterCount <= 0) 
+                monsterCount -= 1;
+                if (monsterCount <= 0)
                 {
                     //클리어 창 뜨게 만들기
-                    switch(_stageIndex)
+                    switch (_stageIndex)
                     {
                         case 2:
                             stageClear[0] = true; break;
@@ -117,7 +117,7 @@ namespace DefaultNamespace
 
         public void ballcheck()
         {
-            if (ballCount == 0) 
+            if (ballCount == 0)
             {
                 lose?.Invoke("아몰라");
             }
@@ -138,7 +138,7 @@ namespace DefaultNamespace
             if (weapon.layer == LayerMask.NameToLayer("UserWeapon"))
             {
                 ballCount -= 1;
-                if (ballCount <= 0) 
+                if (ballCount <= 0)
                 {
                     Invoke("ballcheck", 1f);
 
@@ -171,10 +171,11 @@ namespace DefaultNamespace
         {
             _soundManager.PlayBGM(clip);
         }
-        
-        public void PlaySFX(AudioClip clip,Vector3 position)
+
+        public void PlaySFX(AudioClip clip, Vector3 position)
         {
-            _soundManager.PlaySFX(clip,position);
+            _soundManager.PlaySFX(clip, position);
+        }
         public void Update()
         {
             Debug.Log("몬스터 " + monsterCount);

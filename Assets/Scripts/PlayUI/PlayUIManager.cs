@@ -41,7 +41,6 @@ public class PlayUIManager : MonoBehaviour
     private void Awake()
     {
         _stageIndex = GameManager.Instance._stageIndex;
-        Debug.Log("�������� : " + _stageIndex.ToString());
         LoseUI.SetActive(false);
         WinUI.SetActive(false);
         OptionUI.SetActive(false);
