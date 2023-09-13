@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 public class Broken : MonoBehaviour
 {
-
+    public int changeTime;
     public Shooter change;
     bool one = true;
     // Start is called before the first frame update
@@ -20,7 +20,7 @@ public class Broken : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.GetComponent<Health>().GetHealth() == 1 && one) 
+        if (this.GetComponent<Health>().GetHealth() <= changeTime && one) 
         {
             changeW();
         }
