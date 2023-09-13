@@ -85,8 +85,8 @@ public class PlayUIManager : MonoBehaviour
 
     public void CloseOptionUI()
     {
-        optionUI.SetActive(false);
         Time.timeScale = 1;
+        optionUI.SetActive(false);
     }
 
     public void MoveSelectScene()
@@ -100,15 +100,14 @@ public class PlayUIManager : MonoBehaviour
 
     public void RestartScene()
     {
-        winUI.SetActive(false);
-        loseUI.SetActive(false);
         Time.timeScale = 1;
         LoadingSceneController.LoadScene(_stageIndex);
     }
 
     private void OnDisable()
     {
-        if(Player)
+        Time.timeScale = 1;
+        if (Player)
             Player.GetComponent<Health>().OnDeath -= Lose;
         gameManager.win -= Win;
         gameManager.lose -= Lose;
