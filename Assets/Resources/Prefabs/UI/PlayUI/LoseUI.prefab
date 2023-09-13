@@ -379,7 +379,6 @@ GameObject:
   - component: {fileID: 6852222392181256235}
   - component: {fileID: 6933379295713065046}
   - component: {fileID: 1000459595802502389}
-  - component: {fileID: 2057158708815534904}
   m_Layer: 5
   m_Name: MenuBtn
   m_TagString: Untagged
@@ -490,7 +489,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2057158708815534904}
+      - m_Target: {fileID: 3877923118817003458}
         m_TargetAssemblyTypeName: OptionBtn, Assembly-CSharp
         m_MethodName: SelectScene
         m_Mode: 1
@@ -502,18 +501,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2057158708815534904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4711556996287742441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13d02085317841045b0b7b379eeb47be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7781363753735038689
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,6 +513,7 @@ GameObject:
   - component: {fileID: 5032931009980942191}
   - component: {fileID: 989151590929881931}
   - component: {fileID: 5626418254326393326}
+  - component: {fileID: 3877923118817003458}
   m_Layer: 5
   m_Name: LoseUI
   m_TagString: Untagged
@@ -551,7 +539,7 @@ RectTransform:
   - {fileID: 5508987083252209761}
   - {fileID: 3676824768756436171}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -621,6 +609,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3877923118817003458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7781363753735038689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d02085317841045b0b7b379eeb47be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPressSound: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
+  OpenUI: {fileID: 0}
 --- !u!1 &8465757212328297899
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,7 +635,6 @@ GameObject:
   - component: {fileID: 3297433559822274192}
   - component: {fileID: 3659649214295984454}
   - component: {fileID: 2760128481359816540}
-  - component: {fileID: 8924807769808455723}
   m_Layer: 5
   m_Name: RetryBtn
   m_TagString: Untagged
@@ -744,7 +745,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8924807769808455723}
+      - m_Target: {fileID: 3877923118817003458}
         m_TargetAssemblyTypeName: OptionBtn, Assembly-CSharp
         m_MethodName: Retry
         m_Mode: 1
@@ -756,18 +757,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8924807769808455723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8465757212328297899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13d02085317841045b0b7b379eeb47be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9112199795646620588
 GameObject:
   m_ObjectHideFlags: 0

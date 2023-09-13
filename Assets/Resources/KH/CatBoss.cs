@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class CatBoss : Shooter
 {
+    [SerializeField] private AudioClip sfxBGM;
     [SerializeField] private DialogTyper _dialogTyper;
     public float MoveSpeed;
     private Health PatternHealth;
@@ -23,17 +24,25 @@ public class CatBoss : Shooter
 
     private void BossPattern()
     {
-        
+       
         if (PatternHealth.GetHealth() < 5)
         {
             if (transform.position.x > 2.5 || transform.position.x < -2.5)
             {
                 MoveSpeed = -MoveSpeed;
                 if (PatternHealth.GetHealth() == 4)
-                { _dialogTyper.Enqueue("야아아아아아옹"); }
+                { _dialogTyper.Enqueue("야아아아아아옹");
+                    sound();
+                }
             }
             transform.position += new Vector3(MoveSpeed, 0, 0);
         }
         
+    }
+
+    void sound()
+    {
+        GameManager.Instance.PlaySFX(sfxBGM, new Vector3(0, 0, 0));
+
     }
 }

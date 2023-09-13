@@ -51,6 +51,10 @@ namespace DefaultNamespace
 
         private void Awake()
         {
+            if (_instance != null && _instance != this)
+            {
+                Destroy(gameObject);
+            }
             _ItemManager = GetComponent<ItemManager>();
             _prefabsPoolManager = GetComponent<PrefabsPoolManager>();
             _currentWeapons = new HashSet<GameObject>();
@@ -179,6 +183,11 @@ namespace DefaultNamespace
         public void PlaySFX(AudioClip clip, Vector3 position)
         {
             _soundManager.PlaySFX(clip, position);
+        }
+
+        public void PlayUI(AudioClip clip)
+        {
+            _soundManager.PlayUI(clip);
         }
 
         public void StopBGM()

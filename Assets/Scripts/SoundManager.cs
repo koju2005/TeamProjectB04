@@ -6,9 +6,8 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    [ReadOnly]
-    private AudioSource bgm;
-    [ReadOnly]
+    [SerializeField] private AudioSource bgm;
+    [SerializeField] private AudioSource ui;
     private float sfxVolume;
 
     private const string strBGMVolume = "BGMVolume";
@@ -34,6 +33,7 @@ public class SoundManager : MonoBehaviour
         {
             PlayerPrefs.SetFloat(strSFXVolume,1);
         }
+        PlayerPrefs.Save();
     }
 
     public void SetBGMVolume(float volume)
@@ -41,6 +41,16 @@ public class SoundManager : MonoBehaviour
         PlayerPrefs.SetFloat(strBGMVolume,volume);
         bgm.volume = volume;
         PlayerPrefs.Save();
+    }
+
+    public float GetBGMVolume()
+    {
+        return bgm.volume;
+    }
+    
+    public float GetSFXVolume()
+    {
+        return sfxVolume;
     }
     
     public void SetSFXVolume(float volume)
@@ -55,6 +65,14 @@ public class SoundManager : MonoBehaviour
         bgm.Stop();
         bgm.clip = clip;
         bgm.Play();
+    }
+
+    public void PlayUI(AudioClip clip)
+    {
+        ui.Stop();
+        ui.clip = clip;
+        ui.volume = sfxVolume;
+        ui.Play();
     }
 
     public void StopBGM()
