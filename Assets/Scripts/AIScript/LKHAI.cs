@@ -26,6 +26,10 @@ public class LKHAI : MonoBehaviour
     private GameObject[] isMonsterDie = new GameObject[8];
 
 
+    private SoundManager _SoundManager;
+    [SerializeField] private AudioClip[] phaseMusic;
+
+
     private void Awake()
     {
         _health = GetComponent<Health>();
@@ -35,6 +39,7 @@ public class LKHAI : MonoBehaviour
         _SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _anim = _SpriteRenderer.GetComponent<Animator>();
 
+        _SoundManager = GameManager.Instance._soundManager;
     }
 
     private void Start()
@@ -112,7 +117,8 @@ public class LKHAI : MonoBehaviour
 
     private IEnumerator Ending()
     {
-        phaseLevel = 6;
+        phaseLevel = 4;
+        ChangeBGM();
         Time.timeScale = 0;
         _dialogTyper.Enqueue("°ÅÀÇ ´Ù µµ¸ÁÃÆ´Âµ¥...");
         _dialogTyper.Enqueue("ÀÌ ¸ÁÇÒÀÚ½Ä..!!");
@@ -139,6 +145,7 @@ public class LKHAI : MonoBehaviour
     private IEnumerator phase1()
     {
         phaseLevel = 1;
+        ChangeBGM();
         Time.timeScale = 0;
         yield return CoroutineTime.GetWaitForSecondsRealtime(1);
         _dialogTyper.Enqueue("¹ú½á ¿©±â±îÁö ¦i¾Æ¿Ô³ª..");
@@ -156,7 +163,7 @@ public class LKHAI : MonoBehaviour
     private IEnumerator phase2()
     {
         phaseLevel = 2;
-
+        ChangeBGM();
         _dialogTyper.WriteNow("À¸¾Ç!");
         yield return CoroutineTime.GetWaitForSecondsRealtime(1.5f);
 
@@ -234,5 +241,9 @@ public class LKHAI : MonoBehaviour
         }
     }
 
+    private void ChangeBGM()
+    {
+        _SoundManager.PlayBGM(phaseMusic[phaseLevel]);
+    }
 
 }

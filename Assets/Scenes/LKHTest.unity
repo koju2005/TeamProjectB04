@@ -359,6 +359,12 @@ MonoBehaviour:
   moveSpeed: 1
   phase4RespawnTime: 10
   _dialogTyper: {fileID: 1954556545}
+  phaseMusic:
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 2489abb8975147b43a926b8db72cb096, type: 3}
+  - {fileID: 8300000, guid: 07e5407cdf3f3844eae2f075e1b4569c, type: 3}
+  - {fileID: 8300000, guid: 07e5407cdf3f3844eae2f075e1b4569c, type: 3}
+  - {fileID: 8300000, guid: 07e5407cdf3f3844eae2f075e1b4569c, type: 3}
 --- !u!1 &338025777 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3041445810342550170, guid: a79c3080b6dfb8e4d89f5bd1519be835, type: 3}
