@@ -27,3 +27,9 @@
 - 노동균 : 데이터(ScriptableObject), 시스템 설계 담당
 - 김강현 : 레벨 선택 씬
 - 박민혁 : 게임 레벨디자인
+
+# Scriptable Object
+![캡처](https://github.com/koju2005/TeamProjectB04/assets/141552941/f193ac7e-fb2d-4119-8e85-b3dd90d3dc9d)
+![캡처](https://github.com/koju2005/TeamProjectB04/assets/141552941/9264ff26-adba-46f3-ad1f-c5b7c6f134f5)
+
+스크립트를 오브젝트화 시켜 사용하려는 객체에 필요한 기능만 부여해줄 수 있어 기능 유지보수가 용이하다.
