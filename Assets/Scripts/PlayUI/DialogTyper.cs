@@ -2,15 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using DefaultNamespace;
 using DefaultNamespace.Common;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class DialogTyper : MonoBehaviour
 {
-    [SerializeField] private float typeSpeed=0.5f;
+    [SerializeField] public float typeSpeed=0.5f;
     [SerializeField] private float typeEndWaitTime=2;
-    
+    [SerializeField] private AudioClip[] typeSound;
     private Queue<string> printQueue;
     private StringBuilder sb;
     private TMP_Text Dialog;
@@ -22,6 +24,7 @@ public class DialogTyper : MonoBehaviour
         Dialog = GetComponentInChildren<TMP_Text>();
         printQueue = new Queue<string>();
         sb = new StringBuilder(100);
+        
     }
 
     private void Start()
@@ -61,6 +64,13 @@ public class DialogTyper : MonoBehaviour
         {
             sb.Append(c);
             Dialog.text = sb.ToString();
+            if (c != ' ')
+            {
+                int idx = Random.Range(0, typeSound.Length);
+                GameManager.Instance.PlaySFX(typeSound[idx],transform.position);
+            }
+                
+            
             yield return CoroutineTime.GetWaitForSecondsRealtime(typeSpeed);
         }
         sb.Clear();

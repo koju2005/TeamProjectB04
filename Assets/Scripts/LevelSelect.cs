@@ -117,8 +117,8 @@ public class LevelSelect : MonoBehaviour
             }
         }
         if (allClear)
-            {
-                LoadingSceneController.LoadScene(0); // 나중에 추가되는 엔딩씬 인덱스번호 0지우고 넣어주시면 됩니당. -강현
-            }
+        {
+            LoadingSceneController.LoadScene(8); // 나중에 추가되는 엔딩씬 인덱스번호 0지우고 넣어주시면 됩니당. -강현
+        }
     }
 }
