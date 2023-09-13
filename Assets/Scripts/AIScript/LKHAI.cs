@@ -9,7 +9,6 @@ public class LKHAI : MonoBehaviour
 {
 
     [SerializeField] private Vector2 spawnRange;
-    [SerializeField] private float phase4RespawnTime = 10f;
     [SerializeField] private DialogTyper _dialogTyper;
     [SerializeField] private PlayUIManager _PlayUIManager;
     private Health _health;
