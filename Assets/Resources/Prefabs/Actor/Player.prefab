@@ -109,8 +109,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5792974325616981631}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.0104, y: -0.2023, z: 0}
-  m_LocalScale: {x: 0.5, y: 2, z: 1}
+  m_LocalPosition: {x: -0.15, y: -0.39, z: 0}
+  m_LocalScale: {x: 0.18539365, y: 0.3068753, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4428967635383861137}
@@ -157,10 +157,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300452, guid: c2957f4d831870a48af4ec016652548d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 903e78293636c4c429bcb7016aeb3f17, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+  m_FlipX: 1
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -207,7 +207,7 @@ Transform:
   - {fileID: 6358212567286613585}
   - {fileID: 2490005971248791944}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2551011792731887181
 Rigidbody2D:
@@ -363,9 +363,10 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.51160085, y: 0.096171856}
-      - {x: -0.5332492, y: 0.09585002}
-      - {x: -0.7753722, y: -0.10130274}
-      - {x: 0.74979234, y: -0.10982919}
+      - {x: 0.03953767, y: 0.07375536}
+      - {x: -0.9556201, y: -0.37098143}
+      - {x: -1.0643628, y: -0.54590404}
+      - {x: 1.0165534, y: -0.5544305}
   m_UseDelaunayMesh: 0
 --- !u!114 &-4532027735758918577
 MonoBehaviour:
