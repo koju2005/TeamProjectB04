@@ -77,4 +77,9 @@ public abstract class ObjectPoolManager<T> : MonoBehaviour where T : ScriptableO
     {
         Destroy(poolGo);
     }
+
+    public void Clear()
+    {
+        _pool.Clear();
+    }
 }

@@ -70,7 +70,13 @@ namespace DefaultNamespace
             _instance = this;
             _prefabsPoolManager.Init(@"Prefabs");
             _ItemManager.Init(@"Scriptable\Items");
+            SceneManager.sceneLoaded += ItemClear;
             DontDestroyOnLoad(gameObject);
+        }
+
+        private void ItemClear(Scene arg0, LoadSceneMode arg1)
+        {
+           _ItemManager.Clear();
         }
 
         public GameObject GetPlayer()
@@ -114,10 +120,8 @@ namespace DefaultNamespace
                             break;
                     }
                     
-                    
                     win?.Invoke();
                     //Debug.Log("이게1번같은데?");
-                    
                 }
             }
         }
