@@ -207,15 +207,5 @@ namespace DefaultNamespace
             Array.Fill(stageClear,false);
         }
 
-        int i=-1;
-        public void Update()
-        {
-            if (i != monsterCount)
-            {
-                Debug.Log("몬스터 : " + monsterCount);
-                i = monsterCount;
-            }
-            
-        }
     }
 }
