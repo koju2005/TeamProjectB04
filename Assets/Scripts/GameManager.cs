@@ -95,7 +95,7 @@ namespace DefaultNamespace
             {
                 bool isAllClear = true;
                 monsterCount-=1;
-                if (monsterCount <= 0) 
+                if (monsterCount <= 0 && ballCount > 0 && _player) 
                 {
                     //클리어 창 뜨게 만들기
                     switch (_stageIndex)
