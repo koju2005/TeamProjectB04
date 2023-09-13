@@ -654,10 +654,9 @@ PrefabInstance:
       objectReference: {fileID: 274007747, guid: 069a64fcb6fb9d0489249231de323f7c, type: 3}
     - target: {fileID: 6860353043871303993, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
       propertyPath: MaxHealth
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2211272823933603068, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -684,7 +683,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackPrefabsName:
   - bone
-  AttackDelay: 0a000000
+  AttackDelay:
+  - 5
 --- !u!1001 &831966438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -787,10 +787,9 @@ PrefabInstance:
       objectReference: {fileID: -830620388, guid: 069a64fcb6fb9d0489249231de323f7c, type: 3}
     - target: {fileID: 6860353043871303993, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
       propertyPath: MaxHealth
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2211272823933603068, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1119,14 +1118,13 @@ PrefabInstance:
       objectReference: {fileID: 120610173, guid: 069a64fcb6fb9d0489249231de323f7c, type: 3}
     - target: {fileID: 6860353043871303993, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
       propertyPath: MaxHealth
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7155706311257973308, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.462
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2211272823933603068, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1226,12 +1224,74 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackPrefabsName:
   - bone
-  AttackDelay: 0a000000
+  AttackDelay:
+  - 5
 --- !u!1 &1628245858 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1095270360194539378, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
   m_PrefabInstance: {fileID: 1872555175}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1778260037
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2830962210707726349, guid: e7ecc12bad616f647888ddb6afa6f1c4, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830962210707726349, guid: e7ecc12bad616f647888ddb6afa6f1c4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 377.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830962210707726349, guid: e7ecc12bad616f647888ddb6afa6f1c4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 639
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830962210707726349, guid: e7ecc12bad616f647888ddb6afa6f1c4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830962210707726349, guid: e7ecc12bad616f647888ddb6afa6f1c4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830962210707726349, guid: e7ecc12bad616f647888ddb6afa6f1c4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830962210707726349, guid: e7ecc12bad616f647888ddb6afa6f1c4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830962210707726349, guid: e7ecc12bad616f647888ddb6afa6f1c4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830962210707726349, guid: e7ecc12bad616f647888ddb6afa6f1c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830962210707726349, guid: e7ecc12bad616f647888ddb6afa6f1c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830962210707726349, guid: e7ecc12bad616f647888ddb6afa6f1c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138453168153652112, guid: e7ecc12bad616f647888ddb6afa6f1c4, type: 3}
+      propertyPath: m_Name
+      value: PlayUIManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e7ecc12bad616f647888ddb6afa6f1c4, type: 3}
 --- !u!1 &1797232659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,8 +1448,8 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2124416096}
   - {fileID: 1872555176}
+  - {fileID: 2124416096}
   - {fileID: 831966439}
   - {fileID: 797415834}
   - {fileID: 1336660164}
@@ -1510,10 +1570,9 @@ PrefabInstance:
       objectReference: {fileID: 126687287, guid: 069a64fcb6fb9d0489249231de323f7c, type: 3}
     - target: {fileID: 6860353043871303993, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
       propertyPath: MaxHealth
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2211272823933603068, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1540,7 +1599,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackPrefabsName:
   - bone
-  AttackDelay: 0a000000
+  AttackDelay:
+  - 5
 --- !u!1 &1916424797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,7 +1765,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackPrefabsName:
   - bone
-  AttackDelay: 0a000000
+  AttackDelay:
+  - 5
 --- !u!1 &2069146510 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8587370907170552629, guid: f443090fadbe1bf4d8b452423ea54273, type: 3}
@@ -1859,10 +1920,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6860353043871303993, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
       propertyPath: MaxHealth
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2211272823933603068, guid: 39ded0e8399e8be48ada35b0482873bd, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1889,4 +1949,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackPrefabsName:
   - parkwater
-  AttackDelay: 05000000
+  AttackDelay:
+  - 3
