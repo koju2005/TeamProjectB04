@@ -164,5 +164,10 @@ namespace DefaultNamespace
             _stageIndex = 7;
             LoadScene();
         }
+
+        public void Update()
+        {
+            Debug.Log("몬스터 " + monsterCount);
+        }
     }
 }

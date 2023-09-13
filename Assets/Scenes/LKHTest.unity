@@ -362,8 +362,8 @@ MonoBehaviour:
   _audioSource: {fileID: 2114995349}
   phaseMusic:
   - {fileID: 0}
-  - {fileID: 8300000, guid: 7208dda893cb9534cb6de3e2d8784fbd, type: 3}
-  - {fileID: 8300000, guid: 7208dda893cb9534cb6de3e2d8784fbd, type: 3}
+  - {fileID: 8300000, guid: 2489abb8975147b43a926b8db72cb096, type: 3}
+  - {fileID: 8300000, guid: 07e5407cdf3f3844eae2f075e1b4569c, type: 3}
   - {fileID: 8300000, guid: 7208dda893cb9534cb6de3e2d8784fbd, type: 3}
   - {fileID: 8300000, guid: 7208dda893cb9534cb6de3e2d8784fbd, type: 3}
   - {fileID: 8300000, guid: 7208dda893cb9534cb6de3e2d8784fbd, type: 3}

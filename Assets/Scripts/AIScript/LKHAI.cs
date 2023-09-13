@@ -91,10 +91,10 @@ public class LKHAI : MonoBehaviour
             StopCoroutine(currentPhase);
             currentPhase = StartCoroutine(phase3());
         }
-        else if (_health.GetHealthRate() <= 0.8f && phaseLevel <= 1)
+        else if (_health.GetHealthRate() <= 0.5f && phaseLevel <= 1)
         {
             StopCoroutine(currentPhase);
-            currentPhase = StartCoroutine(phase2());
+            currentPhase = StartCoroutine(phase4());
         }
     }
 
@@ -140,11 +140,6 @@ public class LKHAI : MonoBehaviour
         Time.timeScale = 0;
         yield return CoroutineTime.GetWaitForSecondsRealtime(1);
         _dialogTyper.Enqueue("여기까지 \n잘 오셨습니다.");
-        _dialogTyper.Enqueue("저는 돌아가기 싫습니다");
-        _dialogTyper.Enqueue("야근은 싫단 말입니다");
-        _dialogTyper.Enqueue("");
-        _dialogTyper.Enqueue("그러니");
-        _dialogTyper.Enqueue("어서 나가주시죠");
         SpawnMonster("Pumpkin", MonsterSpawnPos.LEFTDOWN);
         SpawnMonster("Pumpkin", MonsterSpawnPos.LEFTUP);
         SpawnMonster("Pumpkin", MonsterSpawnPos.RIGHTUP);
