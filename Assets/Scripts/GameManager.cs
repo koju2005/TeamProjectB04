@@ -175,6 +175,9 @@ namespace DefaultNamespace
         public void PlaySFX(AudioClip clip,Vector3 position)
         {
             _soundManager.PlaySFX(clip,position);
+        public void Update()
+        {
+            Debug.Log("몬스터 " + monsterCount);
         }
     }
 }
