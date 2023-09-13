@@ -55,19 +55,19 @@ public class LevelSelect : MonoBehaviour
         switch (index) 
         {   
             case 2:
-                GameManager.Instance.PlayUI(Stage1);
+                GameManager.Instance.PlayUISound(Stage1);
                 break;
             case 3:
-                GameManager.Instance.PlayUI(Stage2);
+                GameManager.Instance.PlayUISound(Stage2);
                 break;
             case 4:
-                GameManager.Instance.PlayUI(Stage3);
+                GameManager.Instance.PlayUISound(Stage3);
                 break;
             case 5:
-                GameManager.Instance.PlayUI(Stage4);
+                GameManager.Instance.PlayUISound(Stage4);
                 break;
             case 6:
-                GameManager.Instance.PlayUI(Stage5);
+                GameManager.Instance.PlayUISound(Stage5);
                 break;
         }
     }

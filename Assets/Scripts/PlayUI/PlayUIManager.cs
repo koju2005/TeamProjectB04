@@ -51,9 +51,10 @@ public class PlayUIManager : MonoBehaviour
         optionUI = GameObject.Instantiate(OptionUI);
 
         gameManager = GameManager.Instance;
-        Player = gameManager.GetPlayer();
+     
         
-        Player.GetComponent<Health>().OnDeath += Lose;
+        if(Player)
+            Player.GetComponent<Health>().OnDeath += Lose;
         gameManager.win += Win;
         gameManager.lose += Lose;
 

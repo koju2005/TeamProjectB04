@@ -74,6 +74,13 @@ public class SoundManager : MonoBehaviour
         ui.volume = sfxVolume;
         ui.Play();
     }
+    public void PlayUI()
+    {
+        ui.Stop();
+        ui.volume = sfxVolume;
+        if(ui.clip)
+            ui.Play();
+    }
 
     public void StopBGM()
     {

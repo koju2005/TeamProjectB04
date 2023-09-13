@@ -17,10 +17,10 @@ public class ItemDropManager : MonoBehaviour
     void Start()
     {
         itemList = GameManager.Instance._ItemManager;
+        Invoke("Wait1", 3);
     }
     private void Awake()
     {
-        Invoke("Wait1", 3);
         //StartCoroutine(Drop(dealy));
     }
     // Update is called once per frame
