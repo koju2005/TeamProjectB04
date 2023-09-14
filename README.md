@@ -15,13 +15,11 @@
 
 1. 씬 플로우
    ![Untitled (1)](https://github.com/koju2005/TeamProjectB04/assets/141552941/00486818-5699-40d8-9f8f-4566826c1f00)
-2. 데이터 구조(Scriptable)
-   ![Untitled (2)](https://github.com/koju2005/TeamProjectB04/assets/141552941/92ebb049-9bff-4adb-bf65-e883ac9a1791)
-3. 프리팹
+2. 프리팹
    
   ![image (1)](https://github.com/koju2005/TeamProjectB04/assets/141552941/02e381f4-4c80-4681-997b-73e20bf66fde)
   
-5. 스크립터블 오브젝트
+3. 스크립터블 오브젝트
 
   ![image](https://github.com/koju2005/TeamProjectB04/assets/141552941/e48ba7f9-94f6-4b8c-93c9-b8d576d20d6c)
 
@@ -57,7 +55,7 @@
                  4). LoadingScene - 화면전환 시 마다 실행되는 씬 구현
                  5). Dialog 출력을 통한 스테이지의 패턴 변화 감지 가능
                  6)
-# 사용된 리소스ㅇ
+# 사용된 리소스
 
    1.Art
    
@@ -130,9 +128,9 @@
   2. Dialog Typer 사용 시 Unity 작동 중지
      -
 
-      -> 팀원 간 하드웨어 차이로 인한 코루틴 내 오류 
+      -> 팀원 간 하드웨어 차이로 의심되는 코루틴 내 오류 
 
-         -> 해당 기능 사용 하는 메서드 내에서 시간을 멈추는 기능을 제거하고 다른곳에 이식해줌 - > AMD , Intel CPU 차이로 인한것
+         -> 해당 기능 사용 하는 메서드 내에서 시간을 멈추는 기능을 제거하고 다른곳에 이식해줌 - > 팀원 중 AMD CPU사용 하는 2명인 이상이 없었으나 , Intel CPU를 사용하는 나머지 팀원에게 해당 이슈 발생
 
  3. PlayUIManager를 통한 Time.Scale 수정 시 게임 내 시간이 정지됨
     -
