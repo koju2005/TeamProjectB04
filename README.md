@@ -18,7 +18,12 @@
 2. 데이터 구조(Scriptable)
    ![Untitled (2)](https://github.com/koju2005/TeamProjectB04/assets/141552941/92ebb049-9bff-4adb-bf65-e883ac9a1791)
 3. 프리팹
-   ![Untitled](https://github.com/koju2005/TeamProjectB04/assets/141552941/7290dd44-31a5-4f1e-8635-2a0cfeb5a17f)
+   
+  ![image (1)](https://github.com/koju2005/TeamProjectB04/assets/141552941/02e381f4-4c80-4681-997b-73e20bf66fde)
+  
+5. 스크립터블 오브젝트
+
+  ![image](https://github.com/koju2005/TeamProjectB04/assets/141552941/e48ba7f9-94f6-4b8c-93c9-b8d576d20d6c)
 
 # 역할분담
 
@@ -97,3 +102,33 @@
                   FREE Casual Game SFX Pack - 유니티 에셋스토어 \ Unity Technologies
                      DM-CGS-48
 
+
+# Trouble Shooting / 기록용
+
+   1. Merge 전 비슷한 기능을 담당하는 메서드 및 필드 다수 존재 
+       -
+      
+       ->  모호한 업무 분담으로 인한 기능적 충돌 / 함수 참조 위치가 정리되지 않고 불특정함
+      
+           -> 명확한 업무 분담 후 불필요한 요소 모두 정리 후 해당 기능을 담당하는 Manager로 따로 정리해서 생성
+
+  2. Dialog Typer 사용 시 Unity 작동 중지
+     -
+
+      -> 팀원 간 하드웨어 차이로 인한 코루틴 내 오류 
+
+         -> 해당 기능 사용 하는 메서드 내에서 시간을 멈추는 기능을 제거하고 다른곳에 이식해줌 - > AMD , Intel CPU 차이로 인한것
+
+ 3. PlayUIManager를 통한 Time.Scale 수정 시 게임 내 시간이 정지됨
+    -
+
+      -> Win, Lose UI가 Active될 때 이벤트를 통해 관리 하고있어 그대로 씬이 전환되면 GameManager에 그대로 전달되어 Time.Scale이 돌아오지않음
+
+        -> OnDisalbe() 통해 오브젝트가 비활성화될때는 이벤트에서 삭제할 수 있게 변경함.
+
+4. 기능 추가 후 해당 .cs를 사용하고 있는 모든 오브젝트에서 NullPoint 발생
+   -
+
+    ->  추가된 기능이 특정 컴포넌트에만 영향을 끼치게 되있어 Awake()될 때 사용하는 오브젝트가 특정 컴포넌트를 소지하지 않고있어 발생
+   
+       -> 기능 추가 구현 시 기능을 명확하게 명시 후 , 위와 같은 문제 발생을 피하기위해 모든 작업에 예외처리를 하게됨
