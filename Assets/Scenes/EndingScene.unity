@@ -843,7 +843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typer: {fileID: 847965178}
   endingCredit: {fileID: 1181058243}
-  endingBGM: {fileID: 8300000, guid: 45400638a56be7a4ea9c7e920d8410b6, type: 3}
+  endingBGM: {fileID: 8300000, guid: c24fff81e3e63c3499716b64cdaf6032, type: 3}
 --- !u!4 &445185737
 Transform:
   m_ObjectHideFlags: 0
