@@ -71,12 +71,12 @@
                   Bullet  - https://kr.freepik.com
                   Monster - https://www.flaticon.com
                ㄴ.김민석
-
                ㄷ.박민혁
                   background - pixabay.com - Darkmoon_Art
                   monster -Characters Cards pack 01 - 유니티 에셋스토어
                ㄹ.이경현
-               
+                  pixelfont - 유니티 에셋 스토어
+                  UI - 유니티 에셋 스토어
                ㅁ.노동균
 
    2.Sound
@@ -97,7 +97,9 @@
                   배경음악 -  Horror Elements - 유니티 에셋스토어
                   Amb_scary.wav
                ㄹ.이경현
-               
+                  AborInTheByshes - https://opengameart.org/
+                  Death Sound - https://opengameart.org/
+                  groovy - https://opengameart.org/
                ㅁ.노동균
                   ActionRPGBattleMusic - 유니티 에셋스토어 \ Unity Technologies
                      05 Horns Of War Loop
