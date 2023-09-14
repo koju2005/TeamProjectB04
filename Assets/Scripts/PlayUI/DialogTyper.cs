@@ -76,6 +76,7 @@ public class DialogTyper : MonoBehaviour
         sb.Clear();
         yield return CoroutineTime.GetWaitForSecondsRealtime(typeEndWaitTime);
         Dialog.text = "";
+        
     }
     
     private IEnumerator WriteNowCoroutine(string typeString)
