@@ -62,17 +62,21 @@
    1.Art
    
       (1).StartScene
-         
+            background image - pinterest
+            ui image - 유니티 에셋 스토어 골드메탈
+            title image - 자체제작
       (2).SelectScene
             StageObj          -itch.io/ animated pixel-art assets/elenetari
             BackGround Image  - Zuhria Alfitra
       (3).LoadingScene
-      
+            background image - pinterest
       (4).Stage
                ㄱ.김강현
                   Bullet  - https://kr.freepik.com
                   Monster - https://www.flaticon.com
                ㄴ.김민석
+                  monster - 유니티 에셋 스토어
+                  background - pinterest
                ㄷ.박민혁
                   background - pixabay.com - Darkmoon_Art
                   monster -Characters Cards pack 01 - 유니티 에셋스토어
