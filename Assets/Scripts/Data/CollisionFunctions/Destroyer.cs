@@ -11,7 +11,7 @@ public class Destroyer : CollisionInteraction
         if (target.activeSelf)
         {
             PooledObject pool = target.GetComponent<PooledObject>();
-            if (pool.OnRelease != null)
+            if (pool && pool.OnRelease != null)
                 pool.OnRelease(target);
             else
                 Destroy(target);            

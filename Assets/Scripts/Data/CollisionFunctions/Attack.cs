@@ -6,25 +6,39 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Attack", menuName = "Scriptable/CollisionInteraction/Attack",order = 2)]
 public class Attack : CollisionInteraction
 {
+    // 충돌이 발생했을 때
     public override void EnterCollsion(GameObject Owner, GameObject target)
     {
-        Weapon weapon = Owner.GetComponent<Weapon>();
-        if (LayerMask.NameToLayer(weapon.owner) != target.layer)
+        if (Owner.TryGetComponent(out Weapon weapon) && LayerMask.NameToLayer(weapon.owner) != target.layer)
         {
-            Health health = target.GetComponent<Health>();
-            Animator animator = target.GetComponentInChildren<Animator>();
-            if(animator && animator.runtimeAnimatorController)
-                animator.SetTrigger("Hit");
-            int damage = weapon.Damage; 
-            if (health != null)
-            {
-                health.AddHealth(-damage);
-            }
+            if (target.TryGetComponent(out Health health))
+                health.AddHealth(weapon.Damage);
         }
     }
-
+    // 충돌에서 벗어났을 때
     public override void ExitCollsion(GameObject who, GameObject target)
     {
         
     }
+    
+    
+#if UNITY_EDITOR
+    public override void AddRequireComponent(GameObject Owner)
+    {
+        if (!Owner.TryGetComponent(out Weapon weapon))
+        {
+            Owner.AddComponent<Weapon>();
+        }
+    }
+
+    public override Component GetRemoveComponent(GameObject Owner)
+    {
+        if (Owner.TryGetComponent(out Weapon weapon))
+        {
+            return weapon;
+        }
+
+        return null;
+    }
+#endif
 }

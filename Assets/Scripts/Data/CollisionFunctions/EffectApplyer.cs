@@ -16,5 +16,23 @@ namespace Data.Functions
         {
             
         }
+#if UNITY_EDITOR
+        public override void AddRequireComponent(GameObject Owner)
+        {
+            if (!Owner.TryGetComponent(out Effector effector))
+            {
+                Owner.AddComponent<Effector>();
+            }
+        }
+
+        public override Component GetRemoveComponent(GameObject Owner)
+        {
+            if (Owner.TryGetComponent(out Effector effector))
+            {
+                return effector;
+            }
+            return null;
+        }
     }
+#endif
 }

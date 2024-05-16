@@ -96,8 +96,8 @@ GameObject:
   - component: {fileID: 6805102290303285240}
   - component: {fileID: 1803045650936730547}
   - component: {fileID: 9054113367798753571}
-  - component: {fileID: 6892570836043355796}
   - component: {fileID: 1112100989190821404}
+  - component: {fileID: 6394055686148355801}
   m_Layer: 9
   m_Name: Dongs1Weapon
   m_TagString: Untagged
@@ -175,23 +175,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action:
-  - {fileID: 11400000, guid: bb062b57b16f05546bef0a735c25106e, type: 2}
   - {fileID: 11400000, guid: ae9067291cd56d24085216861816ef4b, type: 2}
   - {fileID: 11400000, guid: bc8e2bd8738c579498ab90765f9f89bd, type: 2}
---- !u!114 &6892570836043355796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6201131137320498978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0f6dea301eb406eb05530f0ea2f544b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 1
-  owner: Monster
+  - {fileID: 11400000, guid: bb062b57b16f05546bef0a735c25106e, type: 2}
 --- !u!58 &1112100989190821404
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -227,3 +213,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &6394055686148355801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6201131137320498978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f6dea301eb406eb05530f0ea2f544b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 0
+  owner: Player

@@ -8,6 +8,12 @@ namespace DefaultNamespace.Data.ItemFunction
     {
         public override void Apply(GameObject Player, int effectValue)
         {
+            GameManager gameManager = GameManager.Instance;
+            if (!gameManager)
+            {
+                Debug.Log("GameManager가 없습니다.");
+            }
+                
             var weapons = GameManager.Instance._currentWeapons.ToList();
             foreach (var weaponObj in weapons)
             {

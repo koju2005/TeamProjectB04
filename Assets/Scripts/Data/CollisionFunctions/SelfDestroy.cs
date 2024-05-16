@@ -12,7 +12,7 @@ public class SelfDestroy : CollisionInteraction
         PooledObject pool = Owner.GetComponent<PooledObject>();
         if (target.activeSelf)
         {
-            if (pool.OnRelease != null)
+            if (pool && pool.OnRelease != null)
                 pool.OnRelease.Invoke(Owner);
             else
                 Destroy(Owner);

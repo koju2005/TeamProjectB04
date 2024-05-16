@@ -10,8 +10,11 @@ public class HitSounding : CollisionInteraction
     public AudioClip clip;
     public override void EnterCollsion(GameObject Owner, GameObject target)
     {
-        SoundManager soundManager = GameManager.Instance._soundManager;
-        soundManager.PlaySFX(clip,target.transform.position);
+        SoundManager soundManager = null;
+        if(GameManager.Instance)
+            soundManager = GameManager.Instance._soundManager;
+        if(soundManager)
+            soundManager.PlaySFX(clip,target.transform.position);
     }
 
     public override void ExitCollsion(GameObject who, GameObject target)
